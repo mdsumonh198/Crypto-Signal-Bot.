@@ -1,0 +1,584 @@
+INFO:scanner.service:Scan starting: fetching active Coinbase USD markets
+INFO:scanner.service:Coinbase discovery: 393 active USD markets available
+INFO:scanner.service:Loading completed BTC candles for market safety filter
+INFO:scanner.service:Ranking markets by liquidity to select top 250
+INFO:scanner.service:Ranked 393 active markets with valid volume data; selected 250/250
+INFO:scanner.service:Selected 250 markets: BTC-USD, ZEC-USD, ETH-USD, XRP-USD, SOL-USD, NEAR-USD, QNT-USD, SUI-USD, PUMP-USD, USDT-USD, HYPE-USD, ZRO-USD, DOGE-USD, TAO-USD, LINK-USD, LTC-USD, AERO-USD, MON-USD, FET-USD, ADA-USD, ICP-USD, XLM-USD, HBAR-USD, STRK-USD, ONDO-USD, WLD-USD, HONEY-USD, SAND-USD, UNI-USD, ENA-USD, AVAX-USD, AAVE-USD, DIMO-USD, BNB-USD, LIGHTER-USD, AKT-USD, USELESS-USD, HFT-USD, VVV-USD, BCH-USD, BLAST-USD, ALGO-USD, EDGE-USD, BASECAT-USD, PENGU-USD, ATH-USD, SEI-USD, ARB-USD, INJ-USD, MORPHO-USD, RAY-USD, FARTCOIN-USD, DOT-USD, DRV-USD, STX-USD, PEPE-USD, ATOM-USD, GTC-USD, AXS-USD, APT-USD, RENDER-USD, BONK-USD, ZAMA-USD, SUPER-USD, CRO-USD, NOM-USD, SYRUP-USD, SHIB-USD, DASH-USD, TIA-USD, BEAM-USD, FIL-USD, IO-USD, CT-USD, SKY-USD, CRV-USD, TRUMP-USD, JTO-USD, HNT-USD, ASTER-USD, SPX-USD, VIRTUAL-USD, S-USD, COTI-USD, DOGINME-USD, APE-USD, GRASS-USD, GEOD-USD, PROS-USD, XPL-USD, JASMY-USD, MANA-USD, LCX-USD, B3-USD, CHIP-USD, SENT-USD, QI-USD, HIGH-USD, NEON-USD, NMR-USD, MAGIC-USD, FUN1-USD, YFI-USD, BAT-USD, 2Z-USD, OP-USD, XCN-USD, PENDLE-USD, BNKR-USD, AURORA-USD, AIOZ-USD, ORCA-USD, DRB-USD, MEGA-USD, ESP-USD, TRAC-USD, PAXG-USD, POL-USD, WIF-USD, PLUME-USD, OXT-USD, KTA-USD, MNDE-USD, EIGEN-USD, WLFI-USD, POND-USD, IMX-USD, KAIO-USD, API3-USD, BLUECHIP-USD, FLR-USD, ZORA-USD, LDO-USD, CFG-USD, JUPITER-USD, GRT-USD, ETC-USD, MET-USD, XTZ-USD, CTR-USD, AMP-USD, ALICE-USD, CVX-USD, SD-USD, MANTLE-USD, ZRX-USD, OCEAN-USD, VET-USD, TOSHI-USD, ALEO-USD, SPK-USD, ZK-USD, W-USD, PYTH-USD, BILL-USD, 1INCH-USD, ROBO-USD, KITE-USD, MAMO-USD, STG-USD, TRB-USD, ETHFI-USD, TROLL-USD, COMP-USD, CAP-USD, TON-USD, ZEN-USD, AVNT-USD, KAITO-USD, AZTEC-USD, DIA-USD, OPG-USD, TRIA-USD, SPELL-USD, MDT-USD, BERA-USD, PLU-USD, SKR-USD, FLOCK-USD, ILV-USD, EDGEX-USD, SWFTC-USD, PROMPT-USD, CBETH-USD, ACH-USD, XAN-USD, ALIGN-USD, FLOKI-USD, AVT-USD, ALCX-USD, CAKE-USD, RARE-USD, NOICE-USD, MINA-USD, SWELL-USD, FIDA-USD, GMT-USD, CTSI-USD, RAVE-USD, KAT-USD, COW-USD, REZ-USD, RED-USD, VTHO-USD, DEEP-USD, NKN-USD, ALEPH-USD, ARX-USD, GIGA-USD, TOWNS-USD, RE-USD, VARA-USD, A8-USD, SQD-USD, ROSE-USD, METIS-USD, SNX-USD, SXT-USD, PROVE-USD, EUL-USD, GROVE-USD, CHZ-USD, DRIFT-USD, IP-USD, SUSHI-USD, SKL-USD, DBR-USD, FLUID-USD, OSMO-USD, KARRAT-USD, RSR-USD, PERP-USD, SHDW-USD, ZETA-USD, ABT-USD, ARKM-USD, SAFE-USD, FLOW-USD, RLS-USD, GWEI-USD, POPCAT-USD, VOXEL-USD, ALLO-USD, ENS-USD, MOODENG-USD, ME-USD, LSETH-USD, ZKC-USD, PRL-USD, TURBO-USD | BTC regime=BULLISH
+INFO:scanner.service:Analysis progress 1/250: BTC-USD
+INFO:scanner.service:BTC-USD WATCH 85.18 BTC=BULLISH
+INFO:scanner.service:BTC-USD qualification: Volume confirmation absent
+INFO:scanner.service:Analysis progress 2/250: ETH-USD
+INFO:scanner.service:ETH-USD WATCH 80.41 BTC=BULLISH
+INFO:scanner.service:ETH-USD qualification: Volume confirmation absent
+INFO:scanner.service:Analysis progress 3/250: SOL-USD
+INFO:scanner.service:SOL-USD WATCH 80.86 BTC=BULLISH
+INFO:scanner.service:SOL-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 4/250: ZEC-USD
+INFO:scanner.service:ZEC-USD WATCH 79.75 BTC=BULLISH
+INFO:scanner.service:ZEC-USD qualification: Bullish EMA structure absent; Volume confirmation absent
+INFO:scanner.service:Analysis progress 5/250: XRP-USD
+INFO:scanner.service:XRP-USD WATCH 77.79 BTC=BULLISH
+INFO:scanner.service:XRP-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 6/250: NEAR-USD
+INFO:scanner.service:NEAR-USD BUY 92.25 BTC=BULLISH
+INFO:scanner.service:Analysis progress 7/250: QNT-USD
+INFO:scanner.service:QNT-USD WATCH 70.79 BTC=BULLISH
+INFO:scanner.service:QNT-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 8/250: SUI-USD
+INFO:scanner.service:SUI-USD WATCH 78.51 BTC=BULLISH
+INFO:scanner.service:SUI-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 9/250: PUMP-USD
+INFO:scanner.service:PUMP-USD WATCH 83.69 BTC=BULLISH
+INFO:scanner.service:PUMP-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 10/250: USDT-USD
+INFO:scanner.service:USDT-USD NO TRADE 53.80 BTC=BULLISH
+INFO:scanner.service:USDT-USD qualification: Volatility outside configured band; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 11/250: DOGE-USD
+INFO:scanner.service:DOGE-USD WATCH 80.51 BTC=BULLISH
+INFO:scanner.service:DOGE-USD qualification: RSI outside BUY band
+INFO:scanner.service:Analysis progress 12/250: HYPE-USD
+INFO:scanner.service:HYPE-USD WATCH 80.91 BTC=BULLISH
+INFO:scanner.service:HYPE-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 13/250: ZRO-USD
+INFO:scanner.service:ZRO-USD WATCH 69.07 BTC=BULLISH
+INFO:scanner.service:ZRO-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 14/250: TAO-USD
+INFO:scanner.service:TAO-USD WATCH 75.13 BTC=BULLISH
+INFO:scanner.service:TAO-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 15/250: LINK-USD
+INFO:scanner.service:LINK-USD WATCH 72.35 BTC=BULLISH
+INFO:scanner.service:LINK-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 16/250: LTC-USD
+INFO:scanner.service:LTC-USD WATCH 77.49 BTC=BULLISH
+INFO:scanner.service:LTC-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 17/250: AERO-USD
+INFO:scanner.service:AERO-USD WATCH 74.98 BTC=BULLISH
+INFO:scanner.service:AERO-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 18/250: MON-USD
+INFO:scanner.service:MON-USD WATCH 77.02 BTC=BULLISH
+INFO:scanner.service:MON-USD qualification: MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 19/250: ADA-USD
+INFO:scanner.service:ADA-USD WATCH 76.71 BTC=BULLISH
+INFO:scanner.service:ADA-USD qualification: Bullish EMA structure absent; Volume confirmation absent
+INFO:scanner.service:Analysis progress 20/250: FET-USD
+INFO:scanner.service:FET-USD WATCH 78.63 BTC=BULLISH
+INFO:scanner.service:FET-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 21/250: ICP-USD
+INFO:scanner.service:ICP-USD WATCH 77.57 BTC=BULLISH
+INFO:scanner.service:ICP-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 22/250: XLM-USD
+INFO:scanner.service:XLM-USD WATCH 75.17 BTC=BULLISH
+INFO:scanner.service:XLM-USD qualification: Bullish EMA structure absent; Volume confirmation absent
+INFO:scanner.service:Analysis progress 23/250: HBAR-USD
+INFO:scanner.service:HBAR-USD WATCH 65.68 BTC=BULLISH
+INFO:scanner.service:HBAR-USD qualification: Bullish EMA structure absent; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 24/250: STRK-USD
+INFO:scanner.service:STRK-USD WATCH 71.61 BTC=BULLISH
+INFO:scanner.service:STRK-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 25/250: ONDO-USD
+INFO:scanner.service:ONDO-USD WATCH 71.06 BTC=BULLISH
+INFO:scanner.service:ONDO-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 26/250: SAND-USD
+ERROR:scanner.service:SAND-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 27/250: HONEY-USD
+ERROR:scanner.service:HONEY-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 28/250: WLD-USD
+INFO:scanner.service:WLD-USD WATCH 79.17 BTC=BULLISH
+INFO:scanner.service:WLD-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 29/250: UNI-USD
+INFO:scanner.service:UNI-USD WATCH 63.46 BTC=BULLISH
+INFO:scanner.service:UNI-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 30/250: AVAX-USD
+INFO:scanner.service:AVAX-USD WATCH 72.93 BTC=BULLISH
+INFO:scanner.service:AVAX-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 31/250: ENA-USD
+INFO:scanner.service:ENA-USD WATCH 73.27 BTC=BULLISH
+INFO:scanner.service:ENA-USD qualification: Bullish EMA structure absent; RSI outside BUY band; Volume confirmation absent
+INFO:scanner.service:Analysis progress 32/250: AAVE-USD
+INFO:scanner.service:AAVE-USD WATCH 67.25 BTC=BULLISH
+INFO:scanner.service:AAVE-USD qualification: MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 33/250: DIMO-USD
+INFO:scanner.service:DIMO-USD NO TRADE 73.72 BTC=BULLISH
+INFO:scanner.service:DIMO-USD qualification: Invalid or excessive stop distance; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 34/250: BNB-USD
+INFO:scanner.service:BNB-USD WATCH 86.73 BTC=BULLISH
+INFO:scanner.service:BNB-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 35/250: AKT-USD
+INFO:scanner.service:AKT-USD WATCH 93.71 BTC=BULLISH
+INFO:scanner.service:AKT-USD qualification: RSI outside BUY band
+INFO:scanner.service:Analysis progress 36/250: LIGHTER-USD
+INFO:scanner.service:LIGHTER-USD WATCH 60.21 BTC=BULLISH
+INFO:scanner.service:LIGHTER-USD qualification: Bullish EMA structure absent; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 37/250: HFT-USD
+ERROR:scanner.service:HFT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 38/250: USELESS-USD
+INFO:scanner.service:USELESS-USD NO TRADE 64.70 BTC=BULLISH
+INFO:scanner.service:USELESS-USD qualification: Spread too wide; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 39/250: VVV-USD
+INFO:scanner.service:VVV-USD BUY 86.77 BTC=BULLISH
+INFO:scanner.service:Analysis progress 40/250: BCH-USD
+INFO:scanner.service:BCH-USD WATCH 71.53 BTC=BULLISH
+INFO:scanner.service:BCH-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 41/250: BLAST-USD
+ERROR:scanner.service:BLAST-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 42/250: EDGE-USD
+ERROR:scanner.service:EDGE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 43/250: BASECAT-USD
+ERROR:scanner.service:BASECAT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 44/250: ALGO-USD
+INFO:scanner.service:ALGO-USD WATCH 67.13 BTC=BULLISH
+INFO:scanner.service:ALGO-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 45/250: PENGU-USD
+INFO:scanner.service:PENGU-USD WATCH 77.50 BTC=BULLISH
+INFO:scanner.service:PENGU-USD qualification: Bullish EMA structure absent
+INFO:scanner.service:Analysis progress 46/250: ATH-USD
+ERROR:scanner.service:ATH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 47/250: ARB-USD
+INFO:scanner.service:ARB-USD BUY 85.42 BTC=BULLISH
+INFO:scanner.service:Analysis progress 48/250: SEI-USD
+INFO:scanner.service:SEI-USD WATCH 88.45 BTC=BULLISH
+INFO:scanner.service:SEI-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 49/250: INJ-USD
+INFO:scanner.service:INJ-USD NO TRADE 47.37 BTC=BULLISH
+INFO:scanner.service:INJ-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 50/250: MORPHO-USD
+INFO:scanner.service:MORPHO-USD WATCH 82.88 BTC=BULLISH
+INFO:scanner.service:MORPHO-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 51/250: FARTCOIN-USD
+INFO:scanner.service:FARTCOIN-USD WATCH 64.52 BTC=BULLISH
+INFO:scanner.service:FARTCOIN-USD qualification: Bullish EMA structure absent; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 52/250: RAY-USD
+INFO:scanner.service:RAY-USD WATCH 88.61 BTC=BULLISH
+INFO:scanner.service:RAY-USD qualification: MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 53/250: DRV-USD
+ERROR:scanner.service:DRV-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 54/250: DOT-USD
+INFO:scanner.service:DOT-USD WATCH 66.86 BTC=BULLISH
+INFO:scanner.service:DOT-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 55/250: STX-USD
+ERROR:scanner.service:STX-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 56/250: GTC-USD
+ERROR:scanner.service:GTC-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 57/250: PEPE-USD
+ERROR:scanner.service:PEPE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 58/250: ATOM-USD
+INFO:scanner.service:ATOM-USD WATCH 71.25 BTC=BULLISH
+INFO:scanner.service:ATOM-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 59/250: AXS-USD
+INFO:scanner.service:AXS-USD WATCH 64.25 BTC=BULLISH
+INFO:scanner.service:AXS-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 60/250: BONK-USD
+ERROR:scanner.service:BONK-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 61/250: RENDER-USD
+INFO:scanner.service:RENDER-USD WATCH 75.19 BTC=BULLISH
+INFO:scanner.service:RENDER-USD qualification: Volume confirmation absent
+INFO:scanner.service:Analysis progress 62/250: APT-USD
+INFO:scanner.service:APT-USD WATCH 68.47 BTC=BULLISH
+INFO:scanner.service:APT-USD qualification: RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 63/250: ZAMA-USD
+INFO:scanner.service:ZAMA-USD NO TRADE 69.59 BTC=BULLISH
+INFO:scanner.service:ZAMA-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 64/250: CRO-USD
+ERROR:scanner.service:CRO-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 65/250: NOM-USD
+ERROR:scanner.service:NOM-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 66/250: SUPER-USD
+INFO:scanner.service:SUPER-USD NO TRADE 56.80 BTC=BULLISH
+INFO:scanner.service:SUPER-USD qualification: Spread too wide; 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 67/250: SYRUP-USD
+INFO:scanner.service:SYRUP-USD NO TRADE 82.95 BTC=BULLISH
+INFO:scanner.service:SYRUP-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 68/250: DASH-USD
+ERROR:scanner.service:DASH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 69/250: SHIB-USD
+INFO:scanner.service:SHIB-USD NO TRADE 64.51 BTC=BULLISH
+INFO:scanner.service:SHIB-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; Volume confirmation absent
+INFO:scanner.service:Analysis progress 70/250: TIA-USD
+INFO:scanner.service:TIA-USD NO TRADE 72.15 BTC=BULLISH
+INFO:scanner.service:TIA-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 71/250: BEAM-USD
+ERROR:scanner.service:BEAM-USD: Insufficient completed candles: 166 < 250
+INFO:scanner.service:Analysis progress 72/250: IO-USD
+ERROR:scanner.service:IO-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 73/250: FIL-USD
+INFO:scanner.service:FIL-USD NO TRADE 53.73 BTC=BULLISH
+INFO:scanner.service:FIL-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 74/250: CT-USD
+ERROR:scanner.service:CT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 75/250: SKY-USD
+INFO:scanner.service:SKY-USD NO TRADE 92.35 BTC=BULLISH
+INFO:scanner.service:SKY-USD qualification: 24h USD turnover too low
+INFO:scanner.service:Analysis progress 76/250: TRUMP-USD
+INFO:scanner.service:TRUMP-USD NO TRADE 59.31 BTC=BULLISH
+INFO:scanner.service:TRUMP-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 77/250: CRV-USD
+INFO:scanner.service:CRV-USD NO TRADE 39.05 BTC=BULLISH
+INFO:scanner.service:CRV-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 78/250: HNT-USD
+INFO:scanner.service:HNT-USD NO TRADE 82.53 BTC=BULLISH
+INFO:scanner.service:HNT-USD qualification: 24h USD turnover too low; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 79/250: JTO-USD
+INFO:scanner.service:JTO-USD NO TRADE 81.83 BTC=BULLISH
+INFO:scanner.service:JTO-USD qualification: 24h USD turnover too low; RSI outside BUY band; Volume confirmation absent
+INFO:scanner.service:Analysis progress 80/250: ASTER-USD
+ERROR:scanner.service:ASTER-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 81/250: S-USD
+ERROR:scanner.service:S-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 82/250: SPX-USD
+INFO:scanner.service:SPX-USD NO TRADE 64.56 BTC=BULLISH
+INFO:scanner.service:SPX-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 83/250: COTI-USD
+ERROR:scanner.service:COTI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 84/250: VIRTUAL-USD
+INFO:scanner.service:VIRTUAL-USD NO TRADE 85.47 BTC=BULLISH
+INFO:scanner.service:VIRTUAL-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 85/250: DOGINME-USD
+ERROR:scanner.service:DOGINME-USD: Insufficient completed candles: 233 < 250
+INFO:scanner.service:Analysis progress 86/250: APE-USD
+INFO:scanner.service:APE-USD NO TRADE 64.64 BTC=BULLISH
+INFO:scanner.service:APE-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 87/250: GRASS-USD
+ERROR:scanner.service:GRASS-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 88/250: GEOD-USD
+ERROR:scanner.service:GEOD-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 89/250: PROS-USD
+ERROR:scanner.service:PROS-USD: Insufficient completed candles: 230 < 250
+INFO:scanner.service:Analysis progress 90/250: XPL-USD
+ERROR:scanner.service:XPL-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 91/250: JASMY-USD
+ERROR:scanner.service:JASMY-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 92/250: MANA-USD
+ERROR:scanner.service:MANA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 93/250: LCX-USD
+ERROR:scanner.service:LCX-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 94/250: CHIP-USD
+ERROR:scanner.service:CHIP-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 95/250: B3-USD
+ERROR:scanner.service:B3-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 96/250: QI-USD
+ERROR:scanner.service:QI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 97/250: SENT-USD
+INFO:scanner.service:SENT-USD NO TRADE 76.97 BTC=BULLISH
+INFO:scanner.service:SENT-USD qualification: 24h USD turnover too low; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 98/250: HIGH-USD
+ERROR:scanner.service:HIGH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 99/250: NEON-USD
+ERROR:scanner.service:NEON-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 100/250: NMR-USD
+ERROR:scanner.service:NMR-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 101/250: FUN1-USD
+ERROR:scanner.service:FUN1-USD: Insufficient completed candles: 194 < 250
+INFO:scanner.service:Analysis progress 102/250: MAGIC-USD
+ERROR:scanner.service:MAGIC-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 103/250: YFI-USD
+ERROR:scanner.service:YFI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 104/250: 2Z-USD
+ERROR:scanner.service:2Z-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 105/250: BAT-USD
+ERROR:scanner.service:BAT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 106/250: XCN-USD
+ERROR:scanner.service:XCN-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 107/250: OP-USD
+INFO:scanner.service:OP-USD NO TRADE 64.33 BTC=BULLISH
+INFO:scanner.service:OP-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 108/250: BNKR-USD
+ERROR:scanner.service:BNKR-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 109/250: PENDLE-USD
+ERROR:scanner.service:PENDLE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 110/250: AURORA-USD
+ERROR:scanner.service:AURORA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 111/250: AIOZ-USD
+ERROR:scanner.service:AIOZ-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 112/250: DRB-USD
+ERROR:scanner.service:DRB-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 113/250: ORCA-USD
+ERROR:scanner.service:ORCA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 114/250: ESP-USD
+ERROR:scanner.service:ESP-USD: Insufficient completed candles: 216 < 250
+INFO:scanner.service:Analysis progress 115/250: MEGA-USD
+INFO:scanner.service:MEGA-USD NO TRADE 57.72 BTC=BULLISH
+INFO:scanner.service:MEGA-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 116/250: TRAC-USD
+ERROR:scanner.service:TRAC-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 117/250: PAXG-USD
+INFO:scanner.service:PAXG-USD NO TRADE 40.71 BTC=BULLISH
+INFO:scanner.service:PAXG-USD qualification: Volatility outside configured band; 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 118/250: POL-USD
+INFO:scanner.service:POL-USD NO TRADE 64.94 BTC=BULLISH
+INFO:scanner.service:POL-USD qualification: 24h USD turnover too low; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 119/250: PLUME-USD
+INFO:scanner.service:PLUME-USD NO TRADE 71.71 BTC=BULLISH
+INFO:scanner.service:PLUME-USD qualification: Spread too wide; 24h USD turnover too low; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 120/250: WIF-USD
+INFO:scanner.service:WIF-USD NO TRADE 43.55 BTC=BULLISH
+INFO:scanner.service:WIF-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 121/250: OXT-USD
+ERROR:scanner.service:OXT-USD: Insufficient completed candles: 228 < 250
+INFO:scanner.service:Analysis progress 122/250: KTA-USD
+ERROR:scanner.service:KTA-USD: Insufficient completed candles: 241 < 250
+INFO:scanner.service:Analysis progress 123/250: MNDE-USD
+ERROR:scanner.service:MNDE-USD: Insufficient completed candles: 229 < 250
+INFO:scanner.service:Analysis progress 124/250: WLFI-USD
+ERROR:scanner.service:WLFI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 125/250: EIGEN-USD
+INFO:scanner.service:EIGEN-USD NO TRADE 69.14 BTC=BULLISH
+INFO:scanner.service:EIGEN-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 126/250: POND-USD
+ERROR:scanner.service:POND-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 127/250: API3-USD
+ERROR:scanner.service:API3-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 128/250: KAIO-USD
+ERROR:scanner.service:KAIO-USD: Insufficient completed candles: 233 < 250
+INFO:scanner.service:Analysis progress 129/250: IMX-USD
+INFO:scanner.service:IMX-USD NO TRADE 62.36 BTC=BULLISH
+INFO:scanner.service:IMX-USD qualification: 24h USD turnover too low; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 130/250: BLUECHIP-USD
+ERROR:scanner.service:BLUECHIP-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 131/250: LDO-USD
+ERROR:scanner.service:LDO-USD: Latest completed candle missing/stale
+INFO:scanner.service:Analysis progress 132/250: CFG-USD
+ERROR:scanner.service:CFG-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 133/250: FLR-USD
+INFO:scanner.service:FLR-USD NO TRADE 50.36 BTC=BULLISH
+INFO:scanner.service:FLR-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 134/250: ZORA-USD
+INFO:scanner.service:ZORA-USD NO TRADE 36.19 BTC=BULLISH
+INFO:scanner.service:ZORA-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 135/250: JUPITER-USD
+ERROR:scanner.service:JUPITER-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 136/250: GRT-USD
+ERROR:scanner.service:GRT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 137/250: ETC-USD
+ERROR:scanner.service:ETC-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 138/250: MET-USD
+ERROR:scanner.service:MET-USD: Insufficient completed candles: 238 < 250
+INFO:scanner.service:Analysis progress 139/250: XTZ-USD
+ERROR:scanner.service:XTZ-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 140/250: CTR-USD
+ERROR:scanner.service:CTR-USD: Insufficient completed candles: 140 < 250
+INFO:scanner.service:Analysis progress 141/250: AMP-USD
+ERROR:scanner.service:AMP-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 142/250: ALICE-USD
+ERROR:scanner.service:ALICE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 143/250: SD-USD
+ERROR:scanner.service:SD-USD: Insufficient completed candles: 150 < 250
+INFO:scanner.service:Analysis progress 144/250: CVX-USD
+ERROR:scanner.service:CVX-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 145/250: MANTLE-USD
+ERROR:scanner.service:MANTLE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 146/250: OCEAN-USD
+ERROR:scanner.service:OCEAN-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 147/250: ZRX-USD
+ERROR:scanner.service:ZRX-USD: Insufficient completed candles: 249 < 250
+INFO:scanner.service:Analysis progress 148/250: VET-USD
+ERROR:scanner.service:VET-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 149/250: TOSHI-USD
+ERROR:scanner.service:TOSHI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 150/250: ALEO-USD
+ERROR:scanner.service:ALEO-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 151/250: SPK-USD
+ERROR:scanner.service:SPK-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 152/250: ZK-USD
+ERROR:scanner.service:ZK-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 153/250: W-USD
+ERROR:scanner.service:W-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 154/250: PYTH-USD
+ERROR:scanner.service:PYTH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 155/250: BILL-USD
+ERROR:scanner.service:BILL-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 156/250: ROBO-USD
+ERROR:scanner.service:ROBO-USD: Insufficient completed candles: 192 < 250
+INFO:scanner.service:Analysis progress 157/250: 1INCH-USD
+ERROR:scanner.service:1INCH-USD: Insufficient completed candles: 191 < 250
+INFO:scanner.service:Analysis progress 158/250: KITE-USD
+ERROR:scanner.service:KITE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 159/250: MAMO-USD
+ERROR:scanner.service:MAMO-USD: Insufficient completed candles: 209 < 250
+INFO:scanner.service:Analysis progress 160/250: STG-USD
+ERROR:scanner.service:STG-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 161/250: TRB-USD
+ERROR:scanner.service:TRB-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 162/250: ETHFI-USD
+ERROR:scanner.service:ETHFI-USD: Insufficient completed candles: 241 < 250
+INFO:scanner.service:Analysis progress 163/250: TROLL-USD
+ERROR:scanner.service:TROLL-USD: Insufficient completed candles: 235 < 250
+INFO:scanner.service:Analysis progress 164/250: COMP-USD
+ERROR:scanner.service:COMP-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 165/250: TON-USD
+ERROR:scanner.service:TON-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 166/250: ZEN-USD
+ERROR:scanner.service:ZEN-USD: Insufficient completed candles: 241 < 250
+INFO:scanner.service:Analysis progress 167/250: CAP-USD
+INFO:scanner.service:CAP-USD NO TRADE 34.26 BTC=BULLISH
+INFO:scanner.service:CAP-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 168/250: AVNT-USD
+ERROR:scanner.service:AVNT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 169/250: KAITO-USD
+ERROR:scanner.service:KAITO-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 170/250: AZTEC-USD
+ERROR:scanner.service:AZTEC-USD: Insufficient completed candles: 249 < 250
+INFO:scanner.service:Analysis progress 171/250: DIA-USD
+ERROR:scanner.service:DIA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 172/250: OPG-USD
+ERROR:scanner.service:OPG-USD: Insufficient completed candles: 246 < 250
+INFO:scanner.service:Analysis progress 173/250: SPELL-USD
+ERROR:scanner.service:SPELL-USD: Insufficient completed candles: 236 < 250
+INFO:scanner.service:Analysis progress 174/250: TRIA-USD
+INFO:scanner.service:TRIA-USD NO TRADE 39.73 BTC=BULLISH
+INFO:scanner.service:TRIA-USD qualification: Spread too wide; 24h USD turnover too low; Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent
+INFO:scanner.service:Analysis progress 175/250: MDT-USD
+ERROR:scanner.service:MDT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 176/250: BERA-USD
+ERROR:scanner.service:BERA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 177/250: PLU-USD
+ERROR:scanner.service:PLU-USD: Insufficient completed candles: 210 < 250
+INFO:scanner.service:Analysis progress 178/250: FLOCK-USD
+ERROR:scanner.service:FLOCK-USD: Insufficient completed candles: 205 < 250
+INFO:scanner.service:Analysis progress 179/250: SKR-USD
+ERROR:scanner.service:SKR-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 180/250: ILV-USD
+ERROR:scanner.service:ILV-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 181/250: EDGEX-USD
+ERROR:scanner.service:EDGEX-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 182/250: SWFTC-USD
+ERROR:scanner.service:SWFTC-USD: Insufficient completed candles: 248 < 250
+INFO:scanner.service:Analysis progress 183/250: PROMPT-USD
+ERROR:scanner.service:PROMPT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 184/250: CBETH-USD
+ERROR:scanner.service:CBETH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 185/250: XAN-USD
+ERROR:scanner.service:XAN-USD: Insufficient completed candles: 216 < 250
+INFO:scanner.service:Analysis progress 186/250: ACH-USD
+ERROR:scanner.service:ACH-USD: Insufficient completed candles: 234 < 250
+INFO:scanner.service:Analysis progress 187/250: ALIGN-USD
+ERROR:scanner.service:ALIGN-USD: Insufficient completed candles: 246 < 250
+INFO:scanner.service:Analysis progress 188/250: AVT-USD
+ERROR:scanner.service:AVT-USD: Insufficient completed candles: 197 < 250
+INFO:scanner.service:Analysis progress 189/250: FLOKI-USD
+ERROR:scanner.service:FLOKI-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 190/250: ALCX-USD
+ERROR:scanner.service:ALCX-USD: Insufficient completed candles: 135 < 250
+INFO:scanner.service:Analysis progress 191/250: CAKE-USD
+ERROR:scanner.service:CAKE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 192/250: RARE-USD
+ERROR:scanner.service:RARE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 193/250: MINA-USD
+ERROR:scanner.service:MINA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 194/250: NOICE-USD
+ERROR:scanner.service:NOICE-USD: Insufficient completed candles: 177 < 250
+INFO:scanner.service:Analysis progress 195/250: SWELL-USD
+ERROR:scanner.service:SWELL-USD: Insufficient completed candles: 161 < 250
+INFO:scanner.service:Analysis progress 196/250: FIDA-USD
+ERROR:scanner.service:FIDA-USD: Insufficient completed candles: 133 < 250
+INFO:scanner.service:Analysis progress 197/250: RAVE-USD
+ERROR:scanner.service:RAVE-USD: Insufficient completed candles: 248 < 250
+INFO:scanner.service:Analysis progress 198/250: GMT-USD
+ERROR:scanner.service:GMT-USD: Insufficient completed candles: 246 < 250
+INFO:scanner.service:Analysis progress 199/250: CTSI-USD
+ERROR:scanner.service:CTSI-USD: Insufficient completed candles: 206 < 250
+INFO:scanner.service:Analysis progress 200/250: COW-USD
+ERROR:scanner.service:COW-USD: Insufficient completed candles: 194 < 250
+INFO:scanner.service:Analysis progress 201/250: KAT-USD
+ERROR:scanner.service:KAT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 202/250: REZ-USD
+ERROR:scanner.service:REZ-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 203/250: RED-USD
+ERROR:scanner.service:RED-USD: Insufficient completed candles: 208 < 250
+INFO:scanner.service:Analysis progress 204/250: VTHO-USD
+ERROR:scanner.service:VTHO-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 205/250: DEEP-USD
+ERROR:scanner.service:DEEP-USD: Insufficient completed candles: 246 < 250
+INFO:scanner.service:Analysis progress 206/250: NKN-USD
+ERROR:scanner.service:NKN-USD: Insufficient completed candles: 188 < 250
+INFO:scanner.service:Analysis progress 207/250: ALEPH-USD
+ERROR:scanner.service:ALEPH-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 208/250: ARX-USD
+ERROR:scanner.service:ARX-USD: Insufficient completed candles: 228 < 250
+INFO:scanner.service:Analysis progress 209/250: GIGA-USD
+ERROR:scanner.service:GIGA-USD: Insufficient completed candles: 230 < 250
+INFO:scanner.service:Analysis progress 210/250: TOWNS-USD
+ERROR:scanner.service:TOWNS-USD: Insufficient completed candles: 185 < 250
+INFO:scanner.service:Analysis progress 211/250: RE-USD
+ERROR:scanner.service:RE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 212/250: VARA-USD
+ERROR:scanner.service:VARA-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 213/250: SQD-USD
+ERROR:scanner.service:SQD-USD: Insufficient completed candles: 244 < 250
+INFO:scanner.service:Analysis progress 214/250: A8-USD
+ERROR:scanner.service:A8-USD: Insufficient completed candles: 150 < 250
+INFO:scanner.service:Analysis progress 215/250: ROSE-USD
+ERROR:scanner.service:ROSE-USD: Insufficient completed candles: 247 < 250
+INFO:scanner.service:Analysis progress 216/250: SNX-USD
+ERROR:scanner.service:SNX-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 217/250: METIS-USD
+ERROR:scanner.service:METIS-USD: Insufficient completed candles: 215 < 250
+INFO:scanner.service:Analysis progress 218/250: SXT-USD
+ERROR:scanner.service:SXT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 219/250: PROVE-USD
+ERROR:scanner.service:PROVE-USD: Insufficient completed candles: 235 < 250
+INFO:scanner.service:Analysis progress 220/250: EUL-USD
+ERROR:scanner.service:EUL-USD: Insufficient completed candles: 159 < 250
+INFO:scanner.service:Analysis progress 221/250: GROVE-USD
+ERROR:scanner.service:GROVE-USD: Insufficient completed candles: 130 < 250
+INFO:scanner.service:Analysis progress 222/250: CHZ-USD
+ERROR:scanner.service:CHZ-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 223/250: DRIFT-USD
+ERROR:scanner.service:DRIFT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 224/250: SKL-USD
+ERROR:scanner.service:SKL-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 225/250: SUSHI-USD
+ERROR:scanner.service:SUSHI-USD: Latest completed candle missing/stale
+INFO:scanner.service:Analysis progress 226/250: DBR-USD
+ERROR:scanner.service:DBR-USD: Insufficient completed candles: 102 < 250
+INFO:scanner.service:Analysis progress 227/250: IP-USD
+INFO:scanner.service:IP-USD NO TRADE 47.95 BTC=BULLISH
+INFO:scanner.service:IP-USD qualification: 24h USD turnover too low; Bullish EMA structure absent; Volume confirmation absent
+INFO:scanner.service:Analysis progress 228/250: FLUID-USD
+ERROR:scanner.service:FLUID-USD: Insufficient completed candles: 226 < 250
+INFO:scanner.service:Analysis progress 229/250: KARRAT-USD
+ERROR:scanner.service:KARRAT-USD: Insufficient completed candles: 248 < 250
+INFO:scanner.service:Analysis progress 230/250: OSMO-USD
+ERROR:scanner.service:OSMO-USD: Insufficient completed candles: 154 < 250
+INFO:scanner.service:Analysis progress 231/250: RSR-USD
+ERROR:scanner.service:RSR-USD: Latest completed candle missing/stale
+INFO:scanner.service:Analysis progress 232/250: PERP-USD
+ERROR:scanner.service:PERP-USD: Insufficient completed candles: 144 < 250
+INFO:scanner.service:Analysis progress 233/250: SHDW-USD
+ERROR:scanner.service:SHDW-USD: Insufficient completed candles: 181 < 250
+INFO:scanner.service:Analysis progress 234/250: ZETA-USD
+ERROR:scanner.service:ZETA-USD: Insufficient completed candles: 179 < 250
+INFO:scanner.service:Analysis progress 235/250: ABT-USD
+ERROR:scanner.service:ABT-USD: Insufficient completed candles: 232 < 250
+INFO:scanner.service:Analysis progress 236/250: ARKM-USD
+ERROR:scanner.service:ARKM-USD: Insufficient completed candles: 104 < 250
+INFO:scanner.service:Analysis progress 237/250: SAFE-USD
+ERROR:scanner.service:SAFE-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 238/250: FLOW-USD
+ERROR:scanner.service:FLOW-USD: Insufficient completed candles: 165 < 250
+INFO:scanner.service:Analysis progress 239/250: RLS-USD
+ERROR:scanner.service:RLS-USD: Insufficient completed candles: 189 < 250
+INFO:scanner.service:Analysis progress 240/250: GWEI-USD
+ERROR:scanner.service:GWEI-USD: Insufficient completed candles: 222 < 250
+INFO:scanner.service:Analysis progress 241/250: POPCAT-USD
+ERROR:scanner.service:POPCAT-USD: Candle gap or duplicate; no fabricated fills allowed
+INFO:scanner.service:Analysis progress 242/250: VOXEL-USD
+ERROR:scanner.service:VOXEL-USD: Insufficient completed candles: 201 < 250
+INFO:scanner.service:Analysis progress 243/250: ALLO-USD
+ERROR:scanner.service:ALLO-USD: Insufficient completed candles: 193 < 250
+INFO:scanner.service:Analysis progress 244/250: ENS-USD
+ERROR:scanner.service:ENS-USD: Insufficient completed candles: 248 < 250
+INFO:scanner.service:Analysis progress 245/250: MOODENG-USD
+ERROR:scanner.service:MOODENG-USD: Insufficient completed candles: 227 < 250
+INFO:scanner.service:Analysis progress 246/250: LSETH-USD
+ERROR:scanner.service:LSETH-USD: Insufficient completed candles: 138 < 250
+INFO:scanner.service:Analysis progress 247/250: ME-USD
+ERROR:scanner.service:ME-USD: Insufficient completed candles: 240 < 250
+INFO:scanner.service:Analysis progress 248/250: PRL-USD
+ERROR:scanner.service:PRL-USD: Insufficient completed candles: 241 < 250
+INFO:scanner.service:Analysis progress 249/250: ZKC-USD
+INFO:scanner.service:ZKC-USD NO TRADE 59.17 BTC=BULLISH
+INFO:scanner.service:ZKC-USD qualification: Spread too wide; 24h USD turnover too low; Bullish EMA structure absent; MACD does not confirm rising positive momentum
+INFO:scanner.service:Analysis progress 250/250: TURBO-USD
+ERROR:scanner.service:TURBO-USD: Insufficient completed candles: 237 < 250
+INFO:scanner.service:Scan summary: selected=250 evaluated=79 | BUY=3 WATCH=43 NO TRADE=33 | errors=171 Telegram alerts=0
+{"evaluated": 79, "errors": 171}
