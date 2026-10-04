@@ -1,0 +1,15 @@
+# Telegram signal TP/SL replies
+
+With `scan --notify`, every newly and successfully delivered BUY stores its Telegram message ID, destination chat, entry/stop/target and timeframe in SQLite's `signal_tracking` table. A confirmed TP or SL sends a reply to that original message using Telegram `reply_parameters`, with indicative gross price move, total tracked signals, closed/open counts, TP wins, SL losses and closed-signal win rate. This works with `PAPER=false`; portfolio simulation is a separate feature.
+
+Only notified BUY signals are tracked. WATCH, failed/ambiguous BUY delivery and old messages sent before this update are not retroactively registered. Multiple signals for a symbol are separately linked to their own messages. The database persists monitoring through restart; changing the chat does not send old replies into the new chat.
+
+Tracking uses completed candles. The partial candle containing notification time is excluded to avoid assigning pre-notification highs/lows to a new signal. As a result an immediate TP/SL touch in that partial candle may be missed. First possible confirmation is the close of the first full candle after registration. This is not live-tick execution monitoring. If both TP and SL are touched in a candle, SL wins conservatively; a gap below SL uses the opening price. Gaps or insufficient market history block outcome assignment rather than fabricating it. Monitoring continues independently of BTC state and top-250 membership, but requires usable exchange data.
+
+Each reply is reserved in SQLite before sending to avoid restart duplicates. Ambiguous/failed reply delivery remains recorded and is not automatically retried. Deleting the parent message or revoking bot permissions can prevent a reply. Statistical results reflect hypothetical signal levels, exclude costs, and cannot establish actual fills, account P/L or future profitability. `scanner stats` includes a separate `telegram_signal_tracking` section; paper-account statistics retain their previous meaning.
+
+## Disk-space incident in this workspace
+
+The C: drive reported zero free bytes during this update. A save failure temporarily truncated database.py; its source was restored and the test suite passed after recovery. To finish source edits without deleting personal data, the original project's scanner and tests directories now resolve through junctions to `D:\Crypto-scanner-runtime`. Generated caches/logs were relocated to `D:\Crypto-scanner-cache-backup`. A standalone source copy is also at `D:\Crypto project -usa`.
+
+The original C: SQLite database could not be backed up or read reliably while the disk was full. Do not assume the D: copy contains the original notification history: it currently has a fresh database. Free space on C: and stop the old process before attempting database recovery/migration. Starting the fresh D: database can resend previously notified signals because the old deduplication history is absent. No real Telegram messages were sent by automated verification of this feature.

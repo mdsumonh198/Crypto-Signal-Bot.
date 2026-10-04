@@ -1,5 +1,7 @@
 # Crypto Market Scanner + Signal Engine + Telegram Bot
 
+For client acceptance and deployment status, see [CLIENT_HANDOVER.md](CLIENT_HANDOVER.md).
+
 A Python 3.11+ signal-only service using real Coinbase Exchange public market data. It evaluates completed OHLCV candles, explains a 0–100 score, applies independent BUY qualification and quality checks, stores every successful analysis in SQLite, and optionally sends Telegram BUY/WATCH alerts. It can simulate trades and replay historical data. No order API, exchange secret, or switch enabling real execution exists.
 
 ## Architecture
