@@ -54,7 +54,8 @@ class Scanner:
                         self.repo.error(now, symbol, str(exc))
                     if index % 10 == 0 or index == len(available):
                         log.info('Liquidity discovery progress: %d/%d markets', index, len(available))
-            requested = sorted((s for s in available if s in turnovers),
+            excluded = {s.strip() for s in c.excluded_pairs.split(',') if s.strip()}
+            requested = sorted((s for s in available if s in turnovers and s not in excluded and turnovers[s] >= c.min_volume_usd),
                                key=lambda s: (-turnovers[s], s))[:c.top_markets]
             log.info('Ranked %d active markets with valid volume data; selected %d/%d',
                      sum(s in turnovers for s in available), len(requested), c.top_markets)

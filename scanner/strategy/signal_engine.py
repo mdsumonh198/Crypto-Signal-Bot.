@@ -1,6 +1,7 @@
 from scanner.strategy.indicators import indicators
 from scanner.strategy.scoring import score, classify
 from scanner.risk.engine import plan
+from scanner.strategy.confirmation import confirm
 
 
 def evaluate(symbol, candles, regime, liquidity, config, now):
@@ -18,6 +19,7 @@ def evaluate(symbol, candles, regime, liquidity, config, now):
         reasons.append('MACD does not confirm rising positive momentum')
     if i['volume_ratio'] < config.volume_buy_ratio:
         reasons.append('Volume confirmation absent')
+    reasons.extend(confirm(candles, i, liquidity, regime, config))
     classification = classify(total, config)
     if regime == 'BREAKDOWN' or not risk['approved']:
         classification = 'NO TRADE'
@@ -28,4 +30,4 @@ def evaluate(symbol, candles, regime, liquidity, config, now):
                 classification=classification, components=parts, explanations=explanations,
                 indicators=i, btc_regime=regime, risk=risk,
                 invalidation_reasons=reasons,
-                reason='; '.join(reasons) if reasons else 'Bullish trend, rising momentum, volume and market quality confirmed')
+                reason='; '.join(reasons) if reasons else 'Bullish trend, rising momentum, volume, candle breakout and market quality confirmed')

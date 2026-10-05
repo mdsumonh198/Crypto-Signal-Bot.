@@ -1,5 +1,7 @@
 # Crypto Market Scanner + Signal Engine + Telegram Bot
 
+The latest top-20 / 15-minute research profile and VPS update steps are in [STRATEGY_UPDATE.md](STRATEGY_UPDATE.md).
+
 For client acceptance and deployment status, see [CLIENT_HANDOVER.md](CLIENT_HANDOVER.md).
 
 A Python 3.11+ signal-only service using real Coinbase Exchange public market data. It evaluates completed OHLCV candles, explains a 0–100 score, applies independent BUY qualification and quality checks, stores every successful analysis in SQLite, and optionally sends Telegram BUY/WATCH alerts. It can simulate trades and replay historical data. No order API, exchange secret, or switch enabling real execution exists.
@@ -58,7 +60,7 @@ The safe inspection command was verified against live BTC-USD and ETH-USD data. 
 
 ## Configuration
 
-Every setting is listed in `.env.example`; environment variables override the file. `TOP_MARKETS` defaults to 250 and overrides `PAIRS`: it selects the top 250 active Coinbase USD pairs ranked by estimated 24h turnover (`base volume × last price`) from the bulk public `/products/stats` response. Set `TOP_MARKETS=0` to use a specific `PAIRS` list. The minimum-volume floor is applied to signal approval, not universe selection, so low-volume pairs remain visible as NO TRADE. If fewer than 250 active pairs have valid ranking data, all available ones are selected and a warning reports the shortfall. Four market-data workers share one global rate limiter; SQLite, paper trades and notification processing stay on the main thread. Each selected pair receives fresh ticker data when its candle history is fetched. A 250-pair scan takes time, especially on startup; progress and rejection reasons are shown in the terminal. Unknown/inactive requested products fail explicitly. Listing does not establish availability to any particular user's account or jurisdiction.
+Every setting is listed in `.env.example`; environment variables override the file. `TOP_MARKETS` defaults to 20 and overrides `PAIRS`: it selects the top 20 active Coinbase USD pairs ranked by estimated 24h turnover (`base volume × last price`) from the bulk public `/products/stats` response. Set `TOP_MARKETS=0` to use a specific `PAIRS` list. The minimum-volume floor is applied to both selection and signal approval. Configured excluded pairs (default stablecoin pairs) are omitted from automatic selection. If fewer than the requested number have eligible ranking data, all eligible ones are selected and a warning reports the shortfall. Four market-data workers share one global rate limiter; SQLite, paper trades and notification processing stay on the main thread. Each selected pair receives fresh ticker data when its candle history is fetched. A top-20 scan avoids downloading history for the rest of the market; progress and rejection reasons are shown in the terminal. Unknown/inactive requested products fail explicitly. Listing does not establish availability to any particular user's account or jurisdiction.
 
 `TIMEFRAME` is seconds, default 900 (15 minutes), and accepts Coinbase's 60, 300, 900, 3600, 21600, 86400 values. `SCAN_INTERVAL` defaults to 60 seconds. This checks for a newly completed candle every minute; an unchanged candle is skipped before market API calls. It does not turn the strategy into a one-minute strategy. A signal arrives after candle completion plus polling delay and data-fetch/analysis time; slow discovery or unavailable data can delay or prevent it. `HISTORY` defaults to 300 and must be at least 250. Historical requests are split into windows below the 300-candle request limit, sorted and deduplicated. Only candles ending at or before the current UTC bucket boundary are included. Missing intervals, a missing latest completed candle, invalid OHLCV or conflicting duplicates block evaluation. Coinbase omits intervals without trades; this service deliberately does not invent fills. Increasing history improves EMA200 warmup but increases API load.
 
@@ -81,7 +83,7 @@ With `clip(x)=max(0,min(1,x))`, the component formulas are:
 
 Scoring formulas are centralized in `strategy/scoring.py`; thresholds live in configuration. Components are recorded to four decimals and totalled without integer rounding. Defaults: score ≥75 raw BUY, 60–<75 WATCH, below 60 NO TRADE. Final classification applies quality gates: high raw scores may become WATCH or NO TRADE. A WATCH is always labeled WATCH.
 
-BUY additionally requires close > EMA200, EMA50 > EMA200, RSI in the configured 52–68 band, MACD >0, histogram >0 and non-decreasing, volume ratio ≥1.05, non-breakdown BTC and risk approval. Failed trend/momentum/volume gates demote raw BUY to WATCH. Failed quality gates or BTC breakdown produce NO TRADE. Explainable scores and invalidation reasons are stored separately from final classification.
+BUY additionally requires close > EMA200, EMA50 > EMA200, RSI in the configured 52–68 band, MACD >0, histogram >0 and non-decreasing, volume ratio ≥1.2, non-breakdown BTC and risk approval. Failed trend/momentum/volume/confirmation gates demote raw BUY to WATCH. Failed quality gates or BTC breakdown produce NO TRADE. Explainable scores and invalidation reasons are stored separately from final classification.
 
 BTC state precedence:
 
@@ -90,7 +92,7 @@ BTC state precedence:
 3. BULLISH: close > EMA50 > EMA200, positive MACD and nonnegative histogram.
 4. NEUTRAL: remaining conditions.
 
-BREAKDOWN blocks BUY and WATCH notifications for all markets, including BTC itself. BEARISH reduces score but is not an absolute ban.
+BREAKDOWN blocks BUY and WATCH notifications for all markets, including BTC itself. With strong confirmation enabled, BEARISH prevents BUY (a qualifying raw score is demoted to WATCH).
 
 ## Risk plans
 

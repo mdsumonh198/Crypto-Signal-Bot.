@@ -1,0 +1,20 @@
+{
+  "total_paper_trades": 0,
+  "open_positions": 0,
+  "wins": 0,
+  "losses": 0,
+  "breakeven": 0,
+  "win_rate": null,
+  "average_return_pct": null,
+  "profit_factor": null,
+  "average_duration_seconds": null,
+  "realized_pnl": 0,
+  "realized_equity": 10000.0,
+  "signals_evaluated": 191,
+  "assumed_spread_bps": 10.0,
+  "limitations": "Historical spread is assumed; candle fills approximate; open trades excluded from realized statistics",
+  "trades": [],
+  "symbol": "ETH-USD",
+  "start": 1790812800,
+  "end": 1790985600
+}

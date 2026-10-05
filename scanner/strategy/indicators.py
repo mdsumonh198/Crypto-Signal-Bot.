@@ -40,11 +40,15 @@ def indicators(candles):
     if len(candles) < 250:
         raise ValueError('250 completed candles required for warmup')
     close = [c.close for c in candles]
+    ema50 = ema(close, 50)
+    ema200 = ema(close, 200)
     m, s, h, previous = macd(close)
     tr = [max(b.high - b.low, abs(b.high - a.close), abs(b.low - a.close)) for a, b in zip(candles, candles[1:])]
     atr = wilder(tr, 14)
     average = sum(c.volume for c in candles[-21:-1]) / 20
-    return dict(price=close[-1], ema50=ema(close, 50)[-1], ema200=ema(close, 200)[-1],
+    return dict(price=close[-1], ema50=ema50[-1], ema200=ema200[-1],
+                prior_trend_confirmed=close[-2] > ema50[-2] > ema200[-2],
+                ema50_rising=ema50[-1] > ema50[-2] > ema50[-3],
                 rsi=rsi(close), macd=m, macd_signal=s, histogram=h, previous_histogram=previous,
                 volume=candles[-1].volume, average_volume=average,
                 volume_ratio=candles[-1].volume / average if average else 0,

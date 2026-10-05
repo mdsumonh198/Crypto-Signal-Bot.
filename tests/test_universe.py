@@ -17,7 +17,7 @@ class LargeProvider(FixtureProvider):
 
     def liquidity(self, symbol):
         # Below the BUY quality floor: still selected, never promoted to BUY.
-        return Liquidity(99.99, 100.01, 10)
+        return Liquidity(99.99, 100.01, 0)
 
 
 class UniverseTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class UniverseTests(unittest.TestCase):
         try:
             provider = LargeProvider()
             with self.assertLogs('scanner.service', level='INFO'):
-                signals = Scanner(Config(), provider, repo).run_once(400 * 900)
+                signals = Scanner(Config(top_markets=250, min_volume_usd=1), provider, repo).run_once(400 * 900)
             self.assertEqual(len(signals), 250)
             expected = set(provider.products()[10:])
             self.assertEqual({s['symbol'] for s in signals}, expected)

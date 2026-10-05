@@ -7,7 +7,8 @@ from pathlib import Path
 @dataclass(frozen=True)
 class Config:
     pairs: str = 'BTC-USD,ETH-USD'
-    top_markets: int = 250
+    top_markets: int = 20
+    excluded_pairs: str = 'USDT-USD,USDC-USD,DAI-USD,PYUSD-USD,USD1-USD'
     timeframe: int = 900
     scan_interval: int = 60
     history: int = 300
@@ -19,7 +20,15 @@ class Config:
     watch_score: float = 60
     rsi_low: float = 52
     rsi_high: float = 68
-    volume_buy_ratio: float = 1.05
+    volume_buy_ratio: float = 1.2
+    strong_confirmation: bool = True
+    breakout_lookback: int = 20
+    breakout_buffer_atr: float = 0.05
+    min_close_location: float = 0.7
+    max_upper_wick: float = 0.25
+    max_extension_atr: float = 2.5
+    max_entry_drift_atr: float = 0.5
+    min_net_reward_risk: float = 1.2
     btc_breakdown_pct: float = -3
     btc_bearish_pct: float = -1
     stop_atr: float = 2
@@ -68,6 +77,12 @@ class Config:
             raise ValueError('Invalid BTC thresholds or volume confirmation ratio')
         if self.fee_bps >= 10000 or self.slippage_bps >= 10000:
             raise ValueError('Fees and slippage must be below 10000 basis points')
+        if not 2 <= self.breakout_lookback <= 200 or self.breakout_buffer_atr < 0:
+            raise ValueError('Invalid breakout settings')
+        if not 0 < self.min_close_location <= 1 or not 0 <= self.max_upper_wick <= 1:
+            raise ValueError('Invalid candle confirmation settings')
+        if min(self.max_extension_atr, self.max_entry_drift_atr, self.min_net_reward_risk) <= 0:
+            raise ValueError('Confirmation risk thresholds must be positive')
 
     @classmethod
     def load(cls, path='.env'):

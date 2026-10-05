@@ -13,6 +13,7 @@ def format_signal(s):
              f"Stop Loss: ${risk['stop_loss']:.8g}", f"Take Profit: ${risk['take_profit']:.8g}",
              f"Risk/Reward: {risk['risk_reward']:.2f}", '']
     lines += [f'{k}: {v:.2f}/{MAXIMA[k]}' for k, v in s['components'].items()]
+    lines += ['Score measures indicator alignment, not win probability.']
     lines += ['', f"RSI: {i['rsi']:.2f}", f"EMA50: {i['ema50']:.8g}", f"EMA200: {i['ema200']:.8g}",
               f"MACD: {i['macd']:.8g}", f"Volume Ratio: {i['volume_ratio']:.2f}",
               f"BTC Regime: {s['btc_regime']}", '', 'Reason: ' + s['reason'],
