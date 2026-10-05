@@ -1,3 +1,5 @@
+> Update: the lifetime notification lockout and candle-page ownership defects below have been corrected. See [TOP10_UPDATE.md](TOP10_UPDATE.md) for current behavior and validation. This report records the earlier audit findings.
+
 # Crypto Signal Bot audit — 2026-10-05
 
 Scope: local deployed-source candidate, code inspection, 67 existing automated tests, deterministic defect reproductions and one read-only public-data scan. No access to current VPS filesystem/database was used. No source, strategy settings, Telegram messages or trading state were changed during this audit.

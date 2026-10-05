@@ -67,7 +67,7 @@ class ConfirmationTests(unittest.TestCase):
         try:
             with self.assertLogs('scanner.service', level='INFO'):
                 result = Scanner(Config(), Markets(), repo).run_once(400 * 900)
-            self.assertEqual(len(result), 20)
+            self.assertEqual(len(result), 10)
             self.assertNotIn('USDT-USD', {s['symbol'] for s in result})
             self.assertNotIn('INACTIVE-USD', {s['symbol'] for s in result})
         finally:

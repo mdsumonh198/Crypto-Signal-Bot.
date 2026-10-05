@@ -7,7 +7,7 @@ from pathlib import Path
 @dataclass(frozen=True)
 class Config:
     pairs: str = 'BTC-USD,ETH-USD'
-    top_markets: int = 20
+    top_markets: int = 10
     excluded_pairs: str = 'USDT-USD,USDC-USD,DAI-USD,PYUSD-USD,USD1-USD'
     timeframe: int = 900
     scan_interval: int = 60
@@ -32,6 +32,7 @@ class Config:
     max_upper_wick: float = 0.25
     max_extension_atr: float = 2.5
     max_entry_drift_atr: float = 0.5
+    max_quote_age: float = 15
     min_net_reward_risk: float = 1.2
     btc_breakdown_pct: float = -3
     btc_bearish_pct: float = -1
@@ -89,7 +90,7 @@ class Config:
             raise ValueError('Invalid breakout settings')
         if not 0 < self.min_close_location <= 1 or not 0 <= self.max_upper_wick <= 1:
             raise ValueError('Invalid candle confirmation settings')
-        if min(self.max_extension_atr, self.max_entry_drift_atr, self.min_net_reward_risk) <= 0:
+        if min(self.max_extension_atr, self.max_entry_drift_atr, self.min_net_reward_risk, self.max_quote_age) <= 0:
             raise ValueError('Confirmation risk thresholds must be positive')
 
     @classmethod

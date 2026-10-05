@@ -25,8 +25,8 @@ class SelectionTests(unittest.TestCase):
         provider = RankedProvider()
         with self.assertLogs('scanner.market_data.selection', level='INFO') as logs:
             selected = select_markets(ranking(), provider.products(), Config())
-        self.assertEqual(selected, ['BTC-USD'] + [f'COIN{n:02d}-USD' for n in range(19)])
-        self.assertTrue(any('Selected Top 20 symbols' in line for line in logs.output))
+        self.assertEqual(selected, ['BTC-USD'] + [f'COIN{n:02d}-USD' for n in range(9)])
+        self.assertTrue(any('Selected Top 10 symbols' in line for line in logs.output))
         self.assertTrue({'AKT-USD', 'USDT-USD', 'NEWSTABLE-USD', 'UNAVAILABLE-USD'}.isdisjoint(selected))
 
     def test_outside_universe_never_evaluated_or_notified_even_with_high_buy_score(self):
@@ -44,8 +44,8 @@ class SelectionTests(unittest.TestCase):
                     with patch('scanner.service.evaluate', side_effect=qualified) as engine:
                         signals = Scanner(Config(top_markets=old_limit, pairs='AKT-USD,USDT-USD'), provider, repo,
                                           notifier, market_caps=ranking()).run_once(400 * 900)
-                    self.assertEqual(len(signals), 20)
-                    self.assertEqual(engine.call_count, 20)
+                    self.assertEqual(len(signals), 10)
+                    self.assertEqual(engine.call_count, 10)
                     symbols = {call.args[0] for call in engine.call_args_list}
                     sent = {call.args[0]['symbol'] for call in notifier.send.call_args_list}
                     self.assertTrue({'AKT-USD', 'USDT-USD', 'NEWSTABLE-USD'}.isdisjoint(symbols | sent))
@@ -67,7 +67,7 @@ class SelectionTests(unittest.TestCase):
         source = FixtureRanking([f'NO{n}-USD' for n in range(100)] + ['BTC-USD'] + [f'COIN{n:02d}-USD' for n in range(25)])
         with patch.object(source, 'page', wraps=source.page) as page:
             selected = select_markets(source, RankedProvider().products(), Config())
-        self.assertEqual(len(selected), 20)
+        self.assertEqual(len(selected), 10)
         self.assertEqual([call.kwargs['start'] for call in page.call_args_list], [1, 101])
 
     def test_selection_never_downloads_candles_or_ranks_by_turnover(self):
@@ -104,6 +104,6 @@ class SelectionTests(unittest.TestCase):
                 self.assertEqual(scanner.allowed, set())
                 self.assertEqual(scanner.run_once(360910), [])
                 self.assertEqual(fetch.call_count, 1)
-            self.assertEqual(repo.db.execute('SELECT COUNT(*) FROM scans').fetchone()[0], 20)
+            self.assertEqual(repo.db.execute('SELECT COUNT(*) FROM scans').fetchone()[0], 10)
         finally:
             repo.close()

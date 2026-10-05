@@ -1,3 +1,9 @@
+# Latest Top 10 update
+
+Final price/data-feed audit and latest fixes: [FINAL_CODE_AUDIT.md](FINAL_CODE_AUDIT.md).
+
+Current behavior and deployment notes: [TOP10_UPDATE.md](TOP10_UPDATE.md). It supersedes the older Top 20 universe description below. New entries use a refreshed Coinbase ask, cycle status is sent every completed 15M analysis, and notification/pagination audit fixes are applied.
+
 # Crypto Market Scanner + Signal Engine + Telegram Bot
 
 The latest CMC market-cap Top 20 selection, quarter-hour scheduling and VPS update steps are in [MARKET_CAP_UPDATE.md](MARKET_CAP_UPDATE.md). Confirmation details remain in [STRATEGY_UPDATE.md](STRATEGY_UPDATE.md).

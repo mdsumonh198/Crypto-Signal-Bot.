@@ -65,7 +65,9 @@ class Coinbase:
                 if len(raw) != 6:
                     raise ValueError('Unexpected candle schema')
                 c = Candle(int(raw[0]), *(float(v) for v in raw[1:]))
-                if start <= c.time and c.time + timeframe <= end:
+                # Each page owns only its half-open window. Coinbase can return
+                # boundary rows belonging to the next page; do not mix snapshots.
+                if cursor <= c.time and c.time + timeframe <= stop:
                     if c.time in rows and rows[c.time] != c:
                         raise ValueError('Conflicting duplicate candle')
                     rows[c.time] = c
@@ -73,8 +75,16 @@ class Coinbase:
         return [rows[t] for t in sorted(rows)]
 
     def liquidity(self, symbol):
+        started = time.time()
         row = self.get(f'/products/{quote(symbol, safe="")}/ticker')
-        result = Liquidity(float(row['bid']), float(row['ask']), float(row['volume']) * float(row['price']))
+        observed = time.time()
+        # Ticker time is the last trade's timestamp, not a book-update timestamp.
+        # Reject stale activity conservatively instead of asserting a live fill.
+        timestamp = datetime.fromisoformat(row['time'].replace('Z', '+00:00'))
+        if timestamp.tzinfo is None:
+            raise ValueError('Coinbase ticker timestamp lacks timezone')
+        result = Liquidity(float(row['bid']), float(row['ask']), float(row['volume']) * float(row['price']),
+                           timestamp.timestamp(), observed, started)
         result.spread_bps
         return result
 

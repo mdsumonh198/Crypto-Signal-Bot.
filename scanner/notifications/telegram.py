@@ -12,6 +12,13 @@ def format_signal(s):
              f"Score: {s['score']:.2f}/100", '', f"Entry: ${risk['entry']:.8g}",
              f"Stop Loss: ${risk['stop_loss']:.8g}", f"Take Profit: ${risk['take_profit']:.8g}",
              f"Risk/Reward: {risk['risk_reward']:.2f}", '']
+    lines += [f"Confirmed candle close: ${risk.get('confirmed_close', i['price']):.8g}",
+              'Entry source: Coinbase ask observed during evaluation; fill price may differ.']
+    quote = s.get('quote', {})
+    if quote.get('observed_at') is not None:
+        lines += [f"Coinbase spot bid / ask: ${quote['bid']:.8g} / ${quote['ask']:.8g}",
+                  'Quote observed at: ' + datetime.fromtimestamp(quote['observed_at'], timezone.utc).isoformat(),
+                  'Last trade at: ' + datetime.fromtimestamp(quote['last_trade_time'], timezone.utc).isoformat()]
     lines += [f'{k}: {v:.2f}/{MAXIMA[k]}' for k, v in s['components'].items()]
     lines += ['Score measures indicator alignment, not win probability.']
     lines += ['', f"RSI: {i['rsi']:.2f}", f"EMA50: {i['ema50']:.8g}", f"EMA200: {i['ema200']:.8g}",
@@ -31,10 +38,20 @@ class Telegram:
     def send(self, s):
         return self.send_text(format_signal(s))
 
+    def cycle_summary(self, candle_close, selected, evaluated, buys, errors, reason=''):
+        label = '📊 15M SCAN UPDATE' if not reason else '⚠️ 15M SCAN UPDATE'
+        state = f'Confirmed BUY setups: {buys}' if buys else 'No valid setup — no new BUY signal.'
+        lines = [label, 'Candle close: ' + datetime.fromtimestamp(candle_close, timezone.utc).isoformat(),
+                 'Universe: CMC-ranked Top 10 Coinbase USD assets',
+                 f'Selected: {selected} | Evaluated: {evaluated} | Data errors: {errors}', state]
+        if reason:
+            lines.append('Status: ' + reason)
+        return self.send_text('\n'.join(lines))
+
     def trade_update(self, trade, stats):
         label = '🎯 TP HIT — WIN' if trade['outcome'] == 'TP' else '🛑 SL HIT — LOSS'
         change = (trade['hit_price'] / trade['entry'] - 1) * 100
-        text = '\n'.join([label, f"Pair: {trade['symbol']}",
+        text = '\n'.join([label, 'Action: SELL / EXIT — tracked long signal; no order placed.', f"Pair: {trade['symbol']}",
                           f"Signal entry: ${trade['entry']:.8g}",
                           f"Stop Loss: ${trade['stop']:.8g}", f"Take Profit: ${trade['target']:.8g}",
                           f"Tracked exit level: ${trade['hit_price']:.8g}",
@@ -51,7 +68,8 @@ class Telegram:
         if event not in ('started', 'stopped'):
             raise ValueError('Invalid lifecycle event')
         label = '🟢 SCANNER STARTED' if event == 'started' else '🔴 SCANNER STOPPED'
-        markets = f'Top {config.top_markets} active USD markets' if config.top_markets else config.pairs
+        markets = ('CMC-ranked Top 10 tradable Coinbase USD assets' if config.timeframe == 900 else
+                   (f'Top {config.top_markets} CMC-ranked USD markets' if config.top_markets else config.pairs))
         lines = [label, f'Markets: {markets}', f'Timeframe: {config.timeframe // 60}M',
                  f'Scan interval: {config.scan_interval} seconds',
                  f'Paper trading: {"enabled" if config.paper else "disabled"}',

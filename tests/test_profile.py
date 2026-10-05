@@ -13,7 +13,7 @@ class ProfileTests(unittest.TestCase):
             first = path.read_text(encoding='utf-8')
             update(path)
             self.assertEqual(first, path.read_text(encoding='utf-8'))
-            self.assertIn('TOP_MARKETS=20', first)
+            self.assertIn('TOP_MARKETS=10', first)
             self.assertIn('TELEGRAM_TOKEN=fixture-secret', first)
             self.assertIn('DATABASE=data/live.sqlite', first)
             self.assertIn('PAPER=true', first)

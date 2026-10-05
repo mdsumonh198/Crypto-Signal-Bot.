@@ -26,7 +26,7 @@ class UniverseTests(unittest.TestCase):
             provider = LargeProvider()
             with self.assertLogs('scanner.service', level='INFO'):
                 signals = Scanner(Config(top_markets=250, min_volume_usd=1), provider, repo).run_once(400 * 900)
-            self.assertEqual(len(signals), 20)
+            self.assertEqual(len(signals), 10)
             self.assertTrue(all(s['classification'] != 'BUY' for s in signals))
         finally:
             repo.close()

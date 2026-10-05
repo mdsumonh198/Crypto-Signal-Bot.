@@ -33,7 +33,7 @@ class SignalTracker:
                     wins=wins, losses=losses, win_rate=wins / closed * 100 if closed else 0)
 
     def update(self, now):
-        # Exits remain active even if BTC breaks down or a coin leaves top 250.
+        # Exits remain active even if BTC breaks down or a coin leaves the universe.
         rows = self.repo.db.execute('SELECT * FROM signal_tracking WHERE outcome IS NULL ORDER BY started_at').fetchall()
         for trade in rows:
             end = now // trade['timeframe'] * trade['timeframe']

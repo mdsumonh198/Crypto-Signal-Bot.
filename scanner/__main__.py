@@ -118,6 +118,9 @@ def main():
             except Exception as exc:
                 logging.error('Scan failed: %s', exc)
                 repo.error(int(time.time()), '*', str(exc))
+                if not scanner.retry_pending:
+                    scanner.report_cycle(int(time.time()) // config.timeframe * config.timeframe,
+                                         'Market data/analysis unavailable; no entry inferred. Check scanner logs.')
                 if args.once:
                     shutdown_reason = 'Single scan failed; check local logs'
                     raise SystemExit(1) from None

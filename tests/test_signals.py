@@ -46,8 +46,8 @@ class SignalTests(unittest.TestCase):
         self.assertTrue(r.claim(s, Config()))
         self.assertFalse(r.claim(s, Config()))
         self.assertTrue(r.claim(dict(s, time=10900, candle_time=9900, classification='BUY'), Config()))
-        self.assertFalse(r.claim(dict(s, time=14500, candle_time=13500, score=82), Config()))
-        self.assertTrue(r.claim(dict(s, time=14500, candle_time=13500, score=86), Config()))
+        self.assertTrue(r.claim(dict(s, time=14500, candle_time=13500, score=82), Config()))
+        self.assertFalse(r.claim(dict(s, time=14500, candle_time=13500, score=86), Config()))
         r.close()
 
     def test_execution_disabled(self):

@@ -25,13 +25,21 @@ class Scanner:
         self.retry_pending = False
         self.refresh_retry_at = 0
         self.candle_cache = {}
+        self.cycle_signals = []
+        self.cycle_errors = 0
         self.tracker = SignalTracker(repository, provider, notifier)
 
     def run_once(self, now=None):
+        # Prompt entries must not queue behind old positions' network catch-up.
+        try:
+            return self._run_entries(now)
+        finally:
+            self.tracker.update(int(time.time()) if now is None else now)
+
+    def _run_entries(self, now=None):
         live_clock = now is None
         now = int(time.time()) if now is None else now
         c = self.config
-        self.tracker.update(now)
         end = now // c.timeframe * c.timeframe
         if end == self.last_end:
             log.info('No new completed candle yet; scanner remains running')
@@ -47,15 +55,17 @@ class Scanner:
             self.allowed = set()
             self.retry_pending = False
             self.cycle_done = set()
+            self.cycle_signals = []
+            self.cycle_errors = 0
             log.info('Universe refresh for candle close %d UTC: fetching CMC market-cap ranking', end)
             available = self.provider.products()
             if 'BTC-USD' not in available:
                 raise ValueError('BTC-USD unavailable; no market safety context')
             if c.timeframe == 900 or c.top_markets:
-                if c.timeframe == 900 and c.top_markets != 20:
-                    log.warning('15-minute strategy requires CMC Top 20; TOP_MARKETS=%d and PAIRS cannot bypass it', c.top_markets)
+                if c.timeframe == 900 and c.top_markets != 10:
+                    log.warning('15-minute strategy requires CMC Top 10; TOP_MARKETS=%d and PAIRS cannot bypass it', c.top_markets)
                 try:
-                    requested = select_markets(self.market_caps, available, c, 20 if c.timeframe == 900 else c.top_markets)
+                    requested = select_markets(self.market_caps, available, c, 10 if c.timeframe == 900 else c.top_markets)
                 except Exception:
                     self.refresh_retry_at = now + 60
                     raise
@@ -104,7 +114,8 @@ class Scanner:
         self.retry_pending = False
         def fetch(symbol):
             candles = btc if symbol == 'BTC-USD' else history(symbol)
-            return candles, self.provider.liquidity(symbol)
+            # Quotes fetched here would age while earlier signals are delivered.
+            return candles, None
 
         pool = ThreadPoolExecutor(max_workers=4, thread_name_prefix='market-data')
         futures = {pool.submit(fetch, symbol): symbol for symbol in requested}
@@ -146,7 +157,17 @@ class Scanner:
                 evaluated_at = int(time.time()) if live_clock else now
                 if evaluated_at // c.timeframe * c.timeframe > end:
                     raise ValueError('Signal became stale during paper history catch-up')
+                # Paper catch-up can take time; refresh the executable-side quote
+                # immediately before the same confirmation and risk checks.
+                liquidity = self.provider.liquidity(symbol)
+                if live_clock and int(time.time()) // c.timeframe * c.timeframe > end:
+                    raise ValueError('Fresh quote crossed the candle boundary')
+                evaluated_at = int(time.time()) if live_clock else now
+                liquidity.validate_freshness(evaluated_at, c.max_quote_age)
+                log.info('Coinbase spot quote %s: bid=%.10g ask=%.10g observed=%s last_trade=%s',
+                         symbol, liquidity.bid, liquidity.ask, liquidity.observed_at, liquidity.quote_time)
                 signal = evaluate(symbol, candles, regime, liquidity, c, evaluated_at)
+                liquidity.validate_freshness(time.time() if live_clock else now, c.max_quote_age)
                 if signal['symbol'] != symbol:
                     raise ValueError('Signal symbol differs from allowed market identity')
                 self.repo.save_scan(signal)
@@ -155,6 +176,14 @@ class Scanner:
                     self.paper.open(signal, entry_price=liquidity.ask)
                 if self.notifier and (signal['classification'] == 'BUY' or (c.watch_alerts and signal['classification'] == 'WATCH')) and self.repo.claim(signal, c):
                     try:
+                        send_time = time.time() if live_clock else now
+                        try:
+                            liquidity.validate_freshness(send_time, c.max_quote_age)
+                            if live_clock and int(send_time) // c.timeframe * c.timeframe > end:
+                                raise ValueError('Signal crossed candle boundary before delivery')
+                        except ValueError:
+                            self.repo.delivered(symbol, 'blocked_stale_quote')
+                            raise
                         message_id = self.notifier.send(signal)
                         self.repo.delivered(symbol, 'sent')
                         if signal['classification'] == 'BUY':
@@ -190,6 +219,27 @@ class Scanner:
                  len(selected), len(signals), counts['BUY'], counts['WATCH'], counts['NO TRADE'], failures, alerts_sent, notification_failures)
         if not self.retry_pending:
             self.last_end = end
+        self.cycle_signals.extend(signals)
+        self.cycle_errors += failures
+        if not self.retry_pending:
+            self.report_cycle(end)
         if not signals and failures:
             raise RuntimeError('All markets failed; inspect errors table/logs')
         return signals
+
+    def report_cycle(self, end, reason=''):
+        if not self.notifier or self.config.timeframe != 900:
+            return
+        if not self.repo.claim_cycle(self.notifier.chat_id, end):
+            return
+        if not reason and self.cycle_errors:
+            reason = 'Some selected markets unavailable; missing data is not a confirmed setup.'
+        try:
+            self.notifier.cycle_summary(end, len(self.allowed or []), len(self.cycle_signals),
+                                        sum(s['classification'] == 'BUY' for s in self.cycle_signals),
+                                        self.cycle_errors, reason)
+            self.repo.delivered_cycle(self.notifier.chat_id, end, 'sent')
+            log.info('Telegram 15M cycle update sent')
+        except RuntimeError:
+            self.repo.delivered_cycle(self.notifier.chat_id, end, 'ambiguous_or_failed')
+            log.error('Telegram cycle update delivery failed or ambiguous; no automatic resend')

@@ -14,6 +14,8 @@ class Repository:
             CREATE TABLE IF NOT EXISTS scans (id INTEGER PRIMARY KEY, time INTEGER, symbol TEXT, candle_time INTEGER, classification TEXT, score REAL, payload TEXT);
             CREATE TABLE IF NOT EXISTS notifications (symbol TEXT PRIMARY KEY, time INTEGER, candle_time INTEGER, classification TEXT, score REAL, status TEXT);
             CREATE TABLE IF NOT EXISTS errors (id INTEGER PRIMARY KEY, time INTEGER, symbol TEXT, message TEXT);
+            CREATE TABLE IF NOT EXISTS cycle_notifications (chat_id TEXT, candle_close INTEGER,
+                status TEXT, PRIMARY KEY(chat_id, candle_close));
             CREATE TABLE IF NOT EXISTS paper (id INTEGER PRIMARY KEY, symbol TEXT, entry_time INTEGER, entry REAL, stop REAL, target REAL, quantity REAL, score REAL, exit_time INTEGER, exit REAL, pnl REAL, return_pct REAL, reason TEXT);
             CREATE TABLE IF NOT EXISTS signal_tracking (
                 id INTEGER PRIMARY KEY, symbol TEXT, chat_id TEXT, message_id INTEGER,
@@ -38,11 +40,22 @@ class Repository:
                 if s['candle_time'] <= row['candle_time']:
                     return False
                 upgrade = config.watch_to_buy and row['classification'] == 'WATCH' and s['classification'] == 'BUY'
-                if not upgrade and (s['time'] - row['time'] < config.cooldown or s['score'] < row['score'] + config.score_improvement):
+                if not upgrade and s['time'] - row['time'] < config.cooldown:
                     return False
             self.db.execute('INSERT OR REPLACE INTO notifications VALUES(?,?,?,?,?,?)',
                             (s['symbol'], s['time'], s['candle_time'], s['classification'], s['score'], 'reserved'))
         return True
+
+    def claim_cycle(self, chat_id, candle_close):
+        with self.db:
+            cursor = self.db.execute('INSERT OR IGNORE INTO cycle_notifications VALUES(?,?,?)',
+                                     (str(chat_id), candle_close, 'reserved'))
+        return cursor.rowcount == 1
+
+    def delivered_cycle(self, chat_id, candle_close, status):
+        with self.db:
+            self.db.execute('UPDATE cycle_notifications SET status=? WHERE chat_id=? AND candle_close=?',
+                            (status, str(chat_id), candle_close))
 
     def delivered(self, symbol, status):
         with self.db:

@@ -1,4 +1,4 @@
-"""First twenty eligible assets in CMC market-cap rank order; no activity bias."""
+"""First eligible assets in CMC market-cap rank order; no activity bias."""
 import logging
 from collections import Counter
 
@@ -7,7 +7,7 @@ STABLE_BASES = frozenset(('USDT', 'USDC', 'DAI', 'PYUSD', 'USD1', 'USDE', 'USDS'
                          'TUSD', 'FDUSD', 'USDP', 'GUSD', 'RLUSD', 'USDD', 'FRAX', 'LUSD'))
 
 
-def select_markets(ranking, available, config, limit=20):
+def select_markets(ranking, available, config, limit=10):
     excluded = {s.strip().upper() for s in config.excluded_pairs.split(',') if s.strip()}
     available = set(available)
     rows = []
@@ -29,7 +29,7 @@ def select_markets(ranking, available, config, limit=20):
             break
     if len(selected) < limit:
         log.warning('Only %d/%d eligible CMC-ranked Coinbase USD assets available', len(selected), limit)
-    log.info('Selected Top 20 symbols by CoinMarketCap market-cap rank (%d selected): %s', len(selected), ', '.join(selected))
+    log.info('Selected Top %d symbols by CoinMarketCap market-cap rank (%d selected): %s', limit, len(selected), ', '.join(selected))
     if not selected:
         raise ValueError('No eligible market-cap-ranked markets; new signals blocked')
     return selected

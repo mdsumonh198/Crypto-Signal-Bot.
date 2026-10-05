@@ -1,6 +1,11 @@
-def plan(i, liquidity, config):
-    entry = i['price']
-    stop = min(entry - config.stop_atr * i['atr'], i['swing_low'] - 0.25 * i['atr'])
+import math
+
+
+def plan(i, liquidity, config, entry_price=None):
+    entry = i['price'] if entry_price is None else entry_price
+    if not math.isfinite(entry) or entry <= 0:
+        raise ValueError('Entry price must be finite and positive')
+    stop = min(i['price'] - config.stop_atr * i['atr'], i['swing_low'] - 0.25 * i['atr'])
     distance = entry - stop
     target = entry + config.reward_risk * distance
     fee = config.fee_bps / 10000
@@ -23,4 +28,5 @@ def plan(i, liquidity, config):
     if config.strong_confirmation and net_rr < config.min_net_reward_risk:
         reasons.append('Reward/risk after configured fees and slippage too low')
     return dict(entry=entry, stop_loss=stop, take_profit=target,
+                confirmed_close=i['price'],
                 risk_reward=config.reward_risk, estimated_net_risk_reward=net_rr, approved=not reasons, reasons=reasons)

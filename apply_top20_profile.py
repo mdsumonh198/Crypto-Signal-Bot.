@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 
 SETTINGS = {
-    'TOP_MARKETS': '20', 'TIMEFRAME': '900', 'SCAN_INTERVAL': '60',
+    'TOP_MARKETS': '10', 'TIMEFRAME': '900', 'SCAN_INTERVAL': '60',
     'VOLUME_BUY_RATIO': '1.2', 'STRONG_CONFIRMATION': 'true',
     'BREAKOUT_LOOKBACK': '20', 'BREAKOUT_BUFFER_ATR': '0.05',
     'MIN_CLOSE_LOCATION': '0.7', 'MAX_UPPER_WICK': '0.25',
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     parser.add_argument('--env', default='.env')
     args = parser.parse_args()
     update(args.env)
-    print('Top-20 research profile applied. Credentials, paper mode and database setting preserved. Restart the scanner service to load it.')
+    print('Top-10 research profile applied. Credentials, paper mode and database setting preserved. Restart the scanner service to load it.')

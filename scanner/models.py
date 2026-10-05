@@ -23,6 +23,23 @@ class Liquidity:
     bid: float
     ask: float
     volume_usd: float
+    # Optional only for historical replay/test providers. Live Coinbase supplies all.
+    quote_time: float | None = None
+    observed_at: float | None = None
+    request_started_at: float | None = None
+
+    def validate_freshness(self, now, max_age):
+        stamps = (self.quote_time, self.observed_at, self.request_started_at)
+        if all(stamp is None for stamp in stamps):
+            return  # Historical spread assumptions have no live timestamp.
+        if any(stamp is None or not math.isfinite(stamp) for stamp in stamps):
+            raise ValueError('Missing or invalid quote timestamp')
+        if any(stamp > now + 2 for stamp in stamps):
+            raise ValueError('Quote timestamp is in the future; check clock')
+        if self.request_started_at > self.observed_at or self.quote_time > self.observed_at + 2:
+            raise ValueError('Inconsistent quote/request timestamps')
+        if any(now - stamp > max_age for stamp in stamps):
+            raise ValueError('Coinbase quote stale or request delayed; new entry blocked')
 
     @property
     def spread_bps(self):
