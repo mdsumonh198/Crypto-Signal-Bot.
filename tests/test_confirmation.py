@@ -6,9 +6,8 @@ from scanner.models import Candle, Liquidity
 from scanner.strategy.confirmation import confirm
 from scanner.strategy.signal_engine import evaluate
 from scanner.risk.engine import plan
-from scanner.service import Scanner
 from scanner.database import Repository
-from tests.test_integration import FixtureProvider
+from tests.test_integration import FixtureProvider, Scanner
 
 
 def setup():

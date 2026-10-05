@@ -13,6 +13,7 @@ from scanner.service import Scanner
 from scanner.backtesting.engine import backtest
 from scanner.paper_trading.engine import PaperEngine
 from scanner.tracking import SignalTracker
+from scanner.scheduling import next_scan_delay
 
 
 def timestamp(value):
@@ -120,7 +121,7 @@ def main():
                 if args.once:
                     shutdown_reason = 'Single scan failed; check local logs'
                     raise SystemExit(1) from None
-            wait_for_next_scan(config.scan_interval)
+            wait_for_next_scan(next_scan_delay(config, time.time(), scanner.last_end, scanner.retry_pending, scanner.refresh_retry_at))
     except KeyboardInterrupt:
         shutdown_reason = 'Stopped by user (Ctrl+C)'
         logging.info('Scanner stopped')

@@ -1,3 +1,7 @@
+# Universe/timing notice
+
+The activity-based universe described below is superseded by [MARKET_CAP_UPDATE.md](MARKET_CAP_UPDATE.md). Current selection uses CMC market-cap rank only. The confirmation rules below are unchanged.
+
 # Top-20 / 15-minute research profile — 2026-10-05
 
 The default universe is dynamically selected from active Coinbase USD markets using turnover, spread quality and recent three-candle price activity. The highest-turnover 40 candidates plus qualifying majors receive lightweight screening; only the final 20 receive full signal analysis. Stablecoins and poor-quality markets are excluded. Majors receive a small preference, not automatic admission. The 15-minute strategy caps full analysis at 20 even with old TOP_MARKETS=64/250 settings. See README for ranking weights. Strong confirmation, high-score rejection gates and Telegram behavior remain unchanged in this market-selection update.

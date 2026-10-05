@@ -4,8 +4,7 @@ from scanner.config import Config
 from scanner.database import Repository
 from scanner.market_data.coinbase import Coinbase
 from scanner.models import Liquidity
-from scanner.service import Scanner
-from tests.test_integration import FixtureProvider
+from tests.test_integration import FixtureProvider, Scanner
 
 
 class LargeProvider(FixtureProvider):

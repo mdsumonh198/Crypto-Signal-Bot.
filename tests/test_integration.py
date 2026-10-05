@@ -6,7 +6,7 @@ from concurrent.futures import Future
 from scanner.config import Config
 from scanner.database import Repository
 from scanner.models import Candle, Liquidity
-from scanner.service import Scanner
+from scanner.service import Scanner as ProductionScanner
 from scanner.strategy.signal_engine import evaluate
 
 
@@ -20,6 +20,23 @@ class FixtureProvider:
 
     def liquidity(self, symbol):
         return Liquidity(99.99, 100.01, 2e6)
+
+
+class FixtureRanking:
+    def __init__(self, symbols):
+        self.rows = [dict(id=n, rank=n, symbol=s.removesuffix('-USD'), market_cap=1e12 / n,
+                          stable=s in ('USDT-USD', 'USDC-USD')) for n, s in enumerate(symbols, 1)]
+
+    def page(self, start=1, limit=100):
+        return self.rows[start - 1:start - 1 + limit]
+
+
+def Scanner(config, provider, repo, notifier=None, market_caps=None):
+    # Explicit offline CMC fixtures. Manual-list cases supply a small ranking
+    # fixture to isolate notification/position behavior, not a production bypass.
+    symbols = config.pairs.split(',') if config.top_markets == 0 else provider.products()
+    return ProductionScanner(config, provider, repo, notifier,
+                             market_caps=market_caps or FixtureRanking(symbols))
 
 
 class IntegrationTests(unittest.TestCase):

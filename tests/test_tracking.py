@@ -7,9 +7,8 @@ from scanner.database import Repository
 from scanner.models import Candle
 from scanner.tracking import SignalTracker
 from scanner.notifications.telegram import Telegram
-from scanner.service import Scanner
 from scanner.config import Config
-from tests.test_integration import FixtureProvider
+from tests.test_integration import FixtureProvider, Scanner
 
 
 def signal():

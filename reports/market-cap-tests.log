@@ -1,0 +1,419 @@
+Only 2/20 eligible CMC-ranked Coinbase USD assets available
+Only 2/20 eligible CMC-ranked Coinbase USD assets available
+15-minute strategy requires CMC Top 20; TOP_MARKETS=0 and PAIRS cannot bypass it
+Only 1/20 eligible CMC-ranked Coinbase USD assets available
+Only 2/20 eligible CMC-ranked Coinbase USD assets available
+Only 1/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,268 INFO SCANNER STARTED | signal only | timeframe=15m | Telegram=enabled | WATCH alerts=False
+2026-10-05 12:02:08,269 INFO Telegram started notification sent
+2026-10-05 12:02:08,269 INFO Waiting for next scan at 06:02:13 UTC; Ctrl+C to stop
+2026-10-05 12:02:08,270 INFO Scanner stopped
+2026-10-05 12:02:08,270 INFO Telegram stopped notification sent
+2026-10-05 12:02:08,275 INFO SCANNER STARTED | signal only | timeframe=15m | Telegram=enabled | WATCH alerts=False
+2026-10-05 12:02:08,275 INFO Telegram started notification sent
+2026-10-05 12:02:08,276 INFO Telegram stopped notification sent
+2026-10-05 12:02:08,279 INFO SCANNER STARTED | signal only | timeframe=15m | Telegram=enabled | WATCH alerts=False
+2026-10-05 12:02:08,280 INFO Telegram started notification sent
+2026-10-05 12:02:08,280 ERROR Scan failed: Fixture scan failure
+2026-10-05 12:02:08,280 INFO Telegram stopped notification sent
+2026-10-05 12:02:08,287 INFO SCANNER STARTED | signal only | timeframe=15m | Telegram=disabled | WATCH alerts=False
+2026-10-05 12:02:08,320 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,320 WARNING Only 1/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,320 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (1 selected): BTC-USD
+2026-10-05 12:02:08,320 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,320 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,320 WARNING Only 2/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,320 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (2 selected): BTC-USD, ETH-USD
+2026-10-05 12:02:08,320 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,320 INFO Analysis market BTC-USD (universe capped at 2)
+2026-10-05 12:02:08,337 INFO BTC-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,337 INFO BTC-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,337 INFO Analysis market ETH-USD (universe capped at 2)
+2026-10-05 12:02:08,337 INFO ETH-USD: completed candle not published; retry in 5s
+2026-10-05 12:02:08,337 INFO Scan summary: selected=2 evaluated=1 | BUY=0 WATCH=1 NO TRADE=0 | data/analysis errors=0 Telegram alerts=0 Telegram errors=0
+2026-10-05 12:02:08,337 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,340 INFO Analysis market ETH-USD (universe capped at 2)
+2026-10-05 12:02:08,342 INFO ETH-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,342 INFO ETH-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,342 INFO Scan summary: selected=2 evaluated=1 | BUY=0 WATCH=1 NO TRADE=0 | data/analysis errors=0 Telegram alerts=0 Telegram errors=0
+1970-01-05 10:00:01,000 INFO Waiting for completed 15m candle publication until close + 5s
+2026-10-05 12:02:08,345 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,345 WARNING Only 1/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,345 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (1 selected): BTC-USD
+2026-10-05 12:02:08,345 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,350 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,351 WARNING Only 2/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,351 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (2 selected): BTC-USD, ETH-USD
+2026-10-05 12:02:08,351 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,354 INFO Analysis market BTC-USD (universe capped at 2)
+2026-10-05 12:02:08,354 INFO BTC-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,354 INFO BTC-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,354 INFO Analysis market ETH-USD (universe capped at 2)
+2026-10-05 12:02:08,354 INFO ETH-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,354 INFO ETH-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,354 INFO Scan summary: selected=2 evaluated=2 | BUY=0 WATCH=2 NO TRADE=0 | data/analysis errors=0 Telegram alerts=0 Telegram errors=0
+2026-10-05 12:02:08,354 INFO Universe refresh for candle close 360900 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,354 WARNING Only 2/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,354 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (2 selected): BTC-USD, ETH-USD
+2026-10-05 12:02:08,354 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,354 INFO Analysis market BTC-USD (universe capped at 2)
+2026-10-05 12:02:08,354 INFO BTC-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,354 INFO BTC-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,354 INFO Analysis market ETH-USD (universe capped at 2)
+2026-10-05 12:02:08,354 INFO ETH-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,354 INFO ETH-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,354 INFO Scan summary: selected=2 evaluated=2 | BUY=0 WATCH=2 NO TRADE=0 | data/analysis errors=0 Telegram alerts=0 Telegram errors=0
+2026-10-05 12:02:08,369 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,369 WARNING 15-minute strategy requires CMC Top 20; TOP_MARKETS=0 and PAIRS cannot bypass it
+2026-10-05 12:02:08,369 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,369 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,399 INFO Analysis market COIN08-USD (universe capped at 20)
+2026-10-05 12:02:08,426 INFO Tracking BUY COIN08-USD: message 42
+2026-10-05 12:02:08,426 INFO Telegram BUY alert sent for COIN08-USD
+2026-10-05 12:02:08,426 INFO COIN08-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,426 INFO Analysis market BTC-USD (universe capped at 20)
+2026-10-05 12:02:08,427 INFO Tracking BUY BTC-USD: message 42
+2026-10-05 12:02:08,427 INFO Telegram BUY alert sent for BTC-USD
+2026-10-05 12:02:08,427 INFO BTC-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,427 INFO Analysis market COIN05-USD (universe capped at 20)
+2026-10-05 12:02:08,429 INFO Tracking BUY COIN05-USD: message 42
+2026-10-05 12:02:08,429 INFO Telegram BUY alert sent for COIN05-USD
+2026-10-05 12:02:08,429 INFO COIN05-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,429 INFO Analysis market COIN01-USD (universe capped at 20)
+2026-10-05 12:02:08,430 INFO Tracking BUY COIN01-USD: message 42
+2026-10-05 12:02:08,430 INFO Telegram BUY alert sent for COIN01-USD
+2026-10-05 12:02:08,430 INFO COIN01-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,430 INFO Analysis market COIN07-USD (universe capped at 20)
+2026-10-05 12:02:08,431 INFO Tracking BUY COIN07-USD: message 42
+2026-10-05 12:02:08,431 INFO Telegram BUY alert sent for COIN07-USD
+2026-10-05 12:02:08,431 INFO COIN07-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,431 INFO Analysis market COIN04-USD (universe capped at 20)
+2026-10-05 12:02:08,432 INFO Tracking BUY COIN04-USD: message 42
+2026-10-05 12:02:08,432 INFO Telegram BUY alert sent for COIN04-USD
+2026-10-05 12:02:08,432 INFO COIN04-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,432 INFO Analysis market COIN02-USD (universe capped at 20)
+2026-10-05 12:02:08,434 INFO Tracking BUY COIN02-USD: message 42
+2026-10-05 12:02:08,434 INFO Telegram BUY alert sent for COIN02-USD
+2026-10-05 12:02:08,435 INFO COIN02-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,435 INFO Analysis market COIN06-USD (universe capped at 20)
+2026-10-05 12:02:08,436 INFO Tracking BUY COIN06-USD: message 42
+2026-10-05 12:02:08,437 INFO Telegram BUY alert sent for COIN06-USD
+2026-10-05 12:02:08,437 INFO COIN06-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,437 INFO Analysis market COIN03-USD (universe capped at 20)
+2026-10-05 12:02:08,438 INFO Tracking BUY COIN03-USD: message 42
+2026-10-05 12:02:08,438 INFO Telegram BUY alert sent for COIN03-USD
+2026-10-05 12:02:08,439 INFO COIN03-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,439 INFO Analysis market COIN00-USD (universe capped at 20)
+2026-10-05 12:02:08,440 INFO Tracking BUY COIN00-USD: message 42
+2026-10-05 12:02:08,441 INFO Telegram BUY alert sent for COIN00-USD
+2026-10-05 12:02:08,441 INFO COIN00-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,441 INFO Analysis market COIN09-USD (universe capped at 20)
+2026-10-05 12:02:08,442 INFO Tracking BUY COIN09-USD: message 42
+2026-10-05 12:02:08,442 INFO Telegram BUY alert sent for COIN09-USD
+2026-10-05 12:02:08,442 INFO COIN09-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,442 INFO Analysis market COIN10-USD (universe capped at 20)
+2026-10-05 12:02:08,443 INFO Tracking BUY COIN10-USD: message 42
+2026-10-05 12:02:08,443 INFO Telegram BUY alert sent for COIN10-USD
+2026-10-05 12:02:08,443 INFO COIN10-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,443 INFO Analysis market COIN11-USD (universe capped at 20)
+2026-10-05 12:02:08,444 INFO Tracking BUY COIN11-USD: message 42
+2026-10-05 12:02:08,445 INFO Telegram BUY alert sent for COIN11-USD
+2026-10-05 12:02:08,445 INFO COIN11-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,445 INFO Analysis market COIN12-USD (universe capped at 20)
+2026-10-05 12:02:08,446 INFO Tracking BUY COIN12-USD: message 42
+2026-10-05 12:02:08,446 INFO Telegram BUY alert sent for COIN12-USD
+2026-10-05 12:02:08,446 INFO COIN12-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,446 INFO Analysis market COIN13-USD (universe capped at 20)
+2026-10-05 12:02:08,447 INFO Tracking BUY COIN13-USD: message 42
+2026-10-05 12:02:08,447 INFO Telegram BUY alert sent for COIN13-USD
+2026-10-05 12:02:08,448 INFO COIN13-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,448 INFO Analysis market COIN14-USD (universe capped at 20)
+2026-10-05 12:02:08,450 INFO Tracking BUY COIN14-USD: message 42
+2026-10-05 12:02:08,450 INFO Telegram BUY alert sent for COIN14-USD
+2026-10-05 12:02:08,450 INFO COIN14-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,450 INFO Analysis market COIN16-USD (universe capped at 20)
+2026-10-05 12:02:08,452 INFO Tracking BUY COIN16-USD: message 42
+2026-10-05 12:02:08,452 INFO Telegram BUY alert sent for COIN16-USD
+2026-10-05 12:02:08,452 INFO COIN16-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,452 INFO Analysis market COIN17-USD (universe capped at 20)
+2026-10-05 12:02:08,453 INFO Tracking BUY COIN17-USD: message 42
+2026-10-05 12:02:08,454 INFO Telegram BUY alert sent for COIN17-USD
+2026-10-05 12:02:08,454 INFO COIN17-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,454 INFO Analysis market COIN18-USD (universe capped at 20)
+2026-10-05 12:02:08,455 INFO Tracking BUY COIN18-USD: message 42
+2026-10-05 12:02:08,455 INFO Telegram BUY alert sent for COIN18-USD
+2026-10-05 12:02:08,455 INFO COIN18-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,455 INFO Analysis market COIN15-USD (universe capped at 20)
+2026-10-05 12:02:08,456 INFO Tracking BUY COIN15-USD: message 42
+2026-10-05 12:02:08,456 INFO Telegram BUY alert sent for COIN15-USD
+2026-10-05 12:02:08,456 INFO COIN15-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,456 INFO Scan summary: selected=20 evaluated=20 | BUY=20 WATCH=0 NO TRADE=0 | data/analysis errors=0 Telegram alerts=20 Telegram errors=0
+2026-10-05 12:02:08,459 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,459 WARNING 15-minute strategy requires CMC Top 20; TOP_MARKETS=64 and PAIRS cannot bypass it
+2026-10-05 12:02:08,459 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,459 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,484 INFO Analysis market BTC-USD (universe capped at 20)
+2026-10-05 12:02:08,512 INFO Tracking BUY BTC-USD: message 42
+2026-10-05 12:02:08,512 INFO Telegram BUY alert sent for BTC-USD
+2026-10-05 12:02:08,512 INFO BTC-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,512 INFO Analysis market COIN04-USD (universe capped at 20)
+2026-10-05 12:02:08,513 INFO Tracking BUY COIN04-USD: message 42
+2026-10-05 12:02:08,513 INFO Telegram BUY alert sent for COIN04-USD
+2026-10-05 12:02:08,514 INFO COIN04-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,514 INFO Analysis market COIN02-USD (universe capped at 20)
+2026-10-05 12:02:08,515 INFO Tracking BUY COIN02-USD: message 42
+2026-10-05 12:02:08,515 INFO Telegram BUY alert sent for COIN02-USD
+2026-10-05 12:02:08,515 INFO COIN02-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,515 INFO Analysis market COIN07-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN07-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN07-USD
+2026-10-05 12:02:08,518 INFO COIN07-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN01-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN01-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN01-USD
+2026-10-05 12:02:08,518 INFO COIN01-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN03-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN03-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN03-USD
+2026-10-05 12:02:08,518 INFO COIN03-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN00-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN00-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN00-USD
+2026-10-05 12:02:08,518 INFO COIN00-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN06-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN06-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN06-USD
+2026-10-05 12:02:08,518 INFO COIN06-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN05-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN05-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN05-USD
+2026-10-05 12:02:08,518 INFO COIN05-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN08-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN08-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN08-USD
+2026-10-05 12:02:08,518 INFO COIN08-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN09-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN09-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN09-USD
+2026-10-05 12:02:08,518 INFO COIN09-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN10-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN10-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN10-USD
+2026-10-05 12:02:08,518 INFO COIN10-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN11-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN11-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN11-USD
+2026-10-05 12:02:08,518 INFO COIN11-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN12-USD (universe capped at 20)
+2026-10-05 12:02:08,518 INFO Tracking BUY COIN12-USD: message 42
+2026-10-05 12:02:08,518 INFO Telegram BUY alert sent for COIN12-USD
+2026-10-05 12:02:08,518 INFO COIN12-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,518 INFO Analysis market COIN13-USD (universe capped at 20)
+2026-10-05 12:02:08,534 INFO Tracking BUY COIN13-USD: message 42
+2026-10-05 12:02:08,534 INFO Telegram BUY alert sent for COIN13-USD
+2026-10-05 12:02:08,534 INFO COIN13-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,534 INFO Analysis market COIN15-USD (universe capped at 20)
+2026-10-05 12:02:08,535 INFO Tracking BUY COIN15-USD: message 42
+2026-10-05 12:02:08,535 INFO Telegram BUY alert sent for COIN15-USD
+2026-10-05 12:02:08,535 INFO COIN15-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,536 INFO Analysis market COIN16-USD (universe capped at 20)
+2026-10-05 12:02:08,536 INFO Tracking BUY COIN16-USD: message 42
+2026-10-05 12:02:08,536 INFO Telegram BUY alert sent for COIN16-USD
+2026-10-05 12:02:08,536 INFO COIN16-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,537 INFO Analysis market COIN17-USD (universe capped at 20)
+2026-10-05 12:02:08,537 INFO Tracking BUY COIN17-USD: message 42
+2026-10-05 12:02:08,537 INFO Telegram BUY alert sent for COIN17-USD
+2026-10-05 12:02:08,537 INFO COIN17-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,538 INFO Analysis market COIN18-USD (universe capped at 20)
+2026-10-05 12:02:08,538 INFO Tracking BUY COIN18-USD: message 42
+2026-10-05 12:02:08,538 INFO Telegram BUY alert sent for COIN18-USD
+2026-10-05 12:02:08,538 INFO COIN18-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,539 INFO Analysis market COIN14-USD (universe capped at 20)
+2026-10-05 12:02:08,539 INFO Tracking BUY COIN14-USD: message 42
+2026-10-05 12:02:08,539 INFO Telegram BUY alert sent for COIN14-USD
+2026-10-05 12:02:08,539 INFO COIN14-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,540 INFO Scan summary: selected=20 evaluated=20 | BUY=20 WATCH=0 NO TRADE=0 | data/analysis errors=0 Telegram alerts=20 Telegram errors=0
+2026-10-05 12:02:08,542 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,542 WARNING 15-minute strategy requires CMC Top 20; TOP_MARKETS=250 and PAIRS cannot bypass it
+2026-10-05 12:02:08,542 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,542 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,569 INFO Analysis market COIN06-USD (universe capped at 20)
+2026-10-05 12:02:08,604 INFO Tracking BUY COIN06-USD: message 42
+2026-10-05 12:02:08,604 INFO Telegram BUY alert sent for COIN06-USD
+2026-10-05 12:02:08,604 INFO COIN06-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,604 INFO Analysis market COIN05-USD (universe capped at 20)
+2026-10-05 12:02:08,605 INFO Tracking BUY COIN05-USD: message 42
+2026-10-05 12:02:08,606 INFO Telegram BUY alert sent for COIN05-USD
+2026-10-05 12:02:08,606 INFO COIN05-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,606 INFO Analysis market BTC-USD (universe capped at 20)
+2026-10-05 12:02:08,607 INFO Tracking BUY BTC-USD: message 42
+2026-10-05 12:02:08,607 INFO Telegram BUY alert sent for BTC-USD
+2026-10-05 12:02:08,607 INFO BTC-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,607 INFO Analysis market COIN04-USD (universe capped at 20)
+2026-10-05 12:02:08,609 INFO Tracking BUY COIN04-USD: message 42
+2026-10-05 12:02:08,609 INFO Telegram BUY alert sent for COIN04-USD
+2026-10-05 12:02:08,609 INFO COIN04-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,609 INFO Analysis market COIN02-USD (universe capped at 20)
+2026-10-05 12:02:08,610 INFO Tracking BUY COIN02-USD: message 42
+2026-10-05 12:02:08,610 INFO Telegram BUY alert sent for COIN02-USD
+2026-10-05 12:02:08,610 INFO COIN02-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,610 INFO Analysis market COIN01-USD (universe capped at 20)
+2026-10-05 12:02:08,611 INFO Tracking BUY COIN01-USD: message 42
+2026-10-05 12:02:08,612 INFO Telegram BUY alert sent for COIN01-USD
+2026-10-05 12:02:08,612 INFO COIN01-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,612 INFO Analysis market COIN03-USD (universe capped at 20)
+2026-10-05 12:02:08,613 INFO Tracking BUY COIN03-USD: message 42
+2026-10-05 12:02:08,613 INFO Telegram BUY alert sent for COIN03-USD
+2026-10-05 12:02:08,613 INFO COIN03-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,613 INFO Analysis market COIN07-USD (universe capped at 20)
+2026-10-05 12:02:08,614 INFO Tracking BUY COIN07-USD: message 42
+2026-10-05 12:02:08,615 INFO Telegram BUY alert sent for COIN07-USD
+2026-10-05 12:02:08,615 INFO COIN07-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,615 INFO Analysis market COIN00-USD (universe capped at 20)
+2026-10-05 12:02:08,618 INFO Tracking BUY COIN00-USD: message 42
+2026-10-05 12:02:08,618 INFO Telegram BUY alert sent for COIN00-USD
+2026-10-05 12:02:08,618 INFO COIN00-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,618 INFO Analysis market COIN08-USD (universe capped at 20)
+2026-10-05 12:02:08,619 INFO Tracking BUY COIN08-USD: message 42
+2026-10-05 12:02:08,620 INFO Telegram BUY alert sent for COIN08-USD
+2026-10-05 12:02:08,620 INFO COIN08-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,620 INFO Analysis market COIN09-USD (universe capped at 20)
+2026-10-05 12:02:08,621 INFO Tracking BUY COIN09-USD: message 42
+2026-10-05 12:02:08,621 INFO Telegram BUY alert sent for COIN09-USD
+2026-10-05 12:02:08,621 INFO COIN09-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,621 INFO Analysis market COIN10-USD (universe capped at 20)
+2026-10-05 12:02:08,622 INFO Tracking BUY COIN10-USD: message 42
+2026-10-05 12:02:08,622 INFO Telegram BUY alert sent for COIN10-USD
+2026-10-05 12:02:08,622 INFO COIN10-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,622 INFO Analysis market COIN11-USD (universe capped at 20)
+2026-10-05 12:02:08,623 INFO Tracking BUY COIN11-USD: message 42
+2026-10-05 12:02:08,623 INFO Telegram BUY alert sent for COIN11-USD
+2026-10-05 12:02:08,623 INFO COIN11-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,623 INFO Analysis market COIN12-USD (universe capped at 20)
+2026-10-05 12:02:08,624 INFO Tracking BUY COIN12-USD: message 42
+2026-10-05 12:02:08,625 INFO Telegram BUY alert sent for COIN12-USD
+2026-10-05 12:02:08,625 INFO COIN12-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,625 INFO Analysis market COIN13-USD (universe capped at 20)
+2026-10-05 12:02:08,626 INFO Tracking BUY COIN13-USD: message 42
+2026-10-05 12:02:08,626 INFO Telegram BUY alert sent for COIN13-USD
+2026-10-05 12:02:08,626 INFO COIN13-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,626 INFO Analysis market COIN14-USD (universe capped at 20)
+2026-10-05 12:02:08,627 INFO Tracking BUY COIN14-USD: message 42
+2026-10-05 12:02:08,627 INFO Telegram BUY alert sent for COIN14-USD
+2026-10-05 12:02:08,627 INFO COIN14-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,627 INFO Analysis market COIN15-USD (universe capped at 20)
+2026-10-05 12:02:08,628 INFO Tracking BUY COIN15-USD: message 42
+2026-10-05 12:02:08,628 INFO Telegram BUY alert sent for COIN15-USD
+2026-10-05 12:02:08,628 INFO COIN15-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,629 INFO Analysis market COIN16-USD (universe capped at 20)
+2026-10-05 12:02:08,629 INFO Tracking BUY COIN16-USD: message 42
+2026-10-05 12:02:08,629 INFO Telegram BUY alert sent for COIN16-USD
+2026-10-05 12:02:08,630 INFO COIN16-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,630 INFO Analysis market COIN18-USD (universe capped at 20)
+2026-10-05 12:02:08,631 INFO Tracking BUY COIN18-USD: message 42
+2026-10-05 12:02:08,631 INFO Telegram BUY alert sent for COIN18-USD
+2026-10-05 12:02:08,631 INFO COIN18-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,632 INFO Analysis market COIN17-USD (universe capped at 20)
+2026-10-05 12:02:08,633 INFO Tracking BUY COIN17-USD: message 42
+2026-10-05 12:02:08,633 INFO Telegram BUY alert sent for COIN17-USD
+2026-10-05 12:02:08,633 INFO COIN17-USD BUY 99.00 BTC=NEUTRAL
+2026-10-05 12:02:08,633 INFO Scan summary: selected=20 evaluated=20 | BUY=20 WATCH=0 NO TRADE=0 | data/analysis errors=0 Telegram alerts=20 Telegram errors=0
+2026-10-05 12:02:08,635 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,636 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,637 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,638 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,638 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,664 INFO Analysis market COIN02-USD (universe capped at 20)
+2026-10-05 12:02:08,684 INFO COIN02-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,684 INFO COIN02-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,684 INFO Analysis market COIN06-USD (universe capped at 20)
+2026-10-05 12:02:08,703 INFO COIN06-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,703 INFO COIN06-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,703 INFO Analysis market COIN01-USD (universe capped at 20)
+2026-10-05 12:02:08,704 INFO COIN01-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,704 INFO COIN01-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,704 INFO Analysis market COIN03-USD (universe capped at 20)
+2026-10-05 12:02:08,704 INFO COIN03-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,705 INFO COIN03-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,705 INFO Analysis market COIN05-USD (universe capped at 20)
+2026-10-05 12:02:08,705 INFO COIN05-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,705 INFO COIN05-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,705 INFO Analysis market COIN00-USD (universe capped at 20)
+2026-10-05 12:02:08,706 INFO COIN00-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,706 INFO COIN00-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,706 INFO Analysis market COIN04-USD (universe capped at 20)
+2026-10-05 12:02:08,707 INFO COIN04-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,707 INFO COIN04-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,707 INFO Analysis market BTC-USD (universe capped at 20)
+2026-10-05 12:02:08,708 INFO BTC-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,708 INFO BTC-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,708 INFO Analysis market COIN07-USD (universe capped at 20)
+2026-10-05 12:02:08,709 INFO COIN07-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,709 INFO COIN07-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,709 INFO Analysis market COIN08-USD (universe capped at 20)
+2026-10-05 12:02:08,710 INFO COIN08-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,710 INFO COIN08-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,710 INFO Analysis market COIN09-USD (universe capped at 20)
+2026-10-05 12:02:08,711 INFO COIN09-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,711 INFO COIN09-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,711 INFO Analysis market COIN10-USD (universe capped at 20)
+2026-10-05 12:02:08,712 INFO COIN10-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,712 INFO COIN10-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,712 INFO Analysis market COIN11-USD (universe capped at 20)
+2026-10-05 12:02:08,713 INFO COIN11-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,713 INFO COIN11-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,713 INFO Analysis market COIN12-USD (universe capped at 20)
+2026-10-05 12:02:08,714 INFO COIN12-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,714 INFO COIN12-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,714 INFO Analysis market COIN14-USD (universe capped at 20)
+2026-10-05 12:02:08,715 INFO COIN14-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,715 INFO COIN14-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,715 INFO Analysis market COIN15-USD (universe capped at 20)
+2026-10-05 12:02:08,716 INFO COIN15-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,716 INFO COIN15-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,716 INFO Analysis market COIN16-USD (universe capped at 20)
+2026-10-05 12:02:08,717 INFO COIN16-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,717 INFO COIN16-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,717 INFO Analysis market COIN17-USD (universe capped at 20)
+2026-10-05 12:02:08,719 INFO COIN17-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,719 INFO COIN17-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,719 INFO Analysis market COIN18-USD (universe capped at 20)
+2026-10-05 12:02:08,720 INFO COIN18-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,720 INFO COIN18-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,720 INFO Analysis market COIN13-USD (universe capped at 20)
+2026-10-05 12:02:08,721 INFO COIN13-USD WATCH 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,722 INFO COIN13-USD qualification: Bullish EMA structure absent; RSI outside BUY band; MACD does not confirm rising positive momentum; Volume confirmation absent; Two-candle rising trend confirmation absent; Previous completed candle lacks positive MACD histogram; Close has not confirmed the prior-range breakout; Breakout candle lacks a strong bullish close; Upper wick indicates rejection
+2026-10-05 12:02:08,722 INFO Scan summary: selected=20 evaluated=20 | BUY=0 WATCH=20 NO TRADE=0 | data/analysis errors=0 Telegram alerts=0 Telegram errors=0
+2026-10-05 12:02:08,722 INFO Universe refresh for candle close 360900 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,723 INFO Market-cap source backoff active; new signals remain blocked
+2026-10-05 12:02:08,724 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,724 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): AKT-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,725 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN00-USD, COIN01-USD, COIN02-USD, COIN03-USD, COIN04-USD, COIN05-USD, COIN06-USD, COIN07-USD, COIN08-USD, COIN09-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+2026-10-05 12:02:08,728 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,730 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,732 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,733 INFO ETH-USD TP HIT for message 42
+2026-10-05 12:02:08,735 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,754 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,763 INFO ETH-USD TP HIT for message 42
+2026-10-05 12:02:08,770 INFO Universe refresh for candle close 360000 UTC: fetching CMC market-cap ranking
+2026-10-05 12:02:08,770 WARNING 15-minute strategy requires CMC Top 20; TOP_MARKETS=0 and PAIRS cannot bypass it
+2026-10-05 12:02:08,771 WARNING Only 1/20 eligible CMC-ranked Coinbase USD assets available
+2026-10-05 12:02:08,771 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (1 selected): BTC-USD
+2026-10-05 12:02:08,771 INFO Loading completed BTC candles for market safety filter
+2026-10-05 12:02:08,775 INFO Analysis market BTC-USD (universe capped at 1)
+2026-10-05 12:02:08,777 INFO Tracking BUY BTC-USD: message 42
+2026-10-05 12:02:08,777 INFO Telegram BUY alert sent for BTC-USD
+2026-10-05 12:02:08,777 INFO BTC-USD BUY 61.80 BTC=NEUTRAL
+2026-10-05 12:02:08,777 INFO Scan summary: selected=1 evaluated=1 | BUY=1 WATCH=0 NO TRADE=0 | data/analysis errors=0 Telegram alerts=1 Telegram errors=0
+2026-10-05 12:02:08,778 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,779 INFO ETH-USD SL HIT for message 42
+2026-10-05 12:02:08,779 INFO Tracking BUY ETH-USD: message 43
+2026-10-05 12:02:08,780 INFO ETH-USD SL HIT for message 43
+2026-10-05 12:02:08,781 INFO Tracking BUY ETH-USD: message 42
+2026-10-05 12:02:08,781 INFO ETH-USD TP HIT for message 42
+2026-10-05 12:02:08,786 INFO Selected Top 20 symbols by CoinMarketCap market-cap rank (20 selected): BTC-USD, COIN0-USD, COIN1-USD, COIN2-USD, COIN3-USD, COIN4-USD, COIN5-USD, COIN6-USD, COIN7-USD, COIN8-USD, COIN9-USD, COIN10-USD, COIN11-USD, COIN12-USD, COIN13-USD, COIN14-USD, COIN15-USD, COIN16-USD, COIN17-USD, COIN18-USD
+----------------------------------------------------------------------
+Ran 67 tests in 0.940s
+
+OK

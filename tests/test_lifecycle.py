@@ -13,6 +13,9 @@ class LifecycleTests(unittest.TestCase):
             stack.enter_context(patch('scanner.__main__.Config.load', return_value=Config(database=':memory:')))
             notifier = stack.enter_context(patch('scanner.__main__.Telegram')).return_value
             scanner = stack.enter_context(patch('scanner.__main__.Scanner')).return_value
+            scanner.last_end = None
+            scanner.retry_pending = False
+            scanner.refresh_retry_at = 0
             scanner.run_once.return_value = []
             if failed:
                 scanner.run_once.side_effect = RuntimeError('Fixture scan failure')

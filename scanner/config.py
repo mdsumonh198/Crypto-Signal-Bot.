@@ -11,6 +11,10 @@ class Config:
     excluded_pairs: str = 'USDT-USD,USDC-USD,DAI-USD,PYUSD-USD,USD1-USD'
     timeframe: int = 900
     scan_interval: int = 60
+    candle_publish_delay: int = 5
+    candle_retry_interval: int = 5
+    candle_retry_window: int = 90
+    cmc_api_key: str = ''
     history: int = 300
     min_volume_usd: float = 1_000_000
     max_spread_bps: float = 20
@@ -59,6 +63,10 @@ class Config:
             raise ValueError('Unsupported Coinbase candle timeframe')
         if not 250 <= self.history <= 10000 or self.scan_interval < 10:
             raise ValueError('history >= 250 and scan_interval >= 10 required')
+        if not 1 <= self.candle_publish_delay < self.candle_retry_window or (self.timeframe == 900 and self.candle_retry_window >= 900):
+            raise ValueError('Publication delay < retry window required (15m window must be < 900s)')
+        if not 1 <= self.candle_retry_interval <= 30:
+            raise ValueError('Candle retry interval must be in [1, 30] seconds')
         if not 0 <= self.watch_score < self.buy_score <= 100:
             raise ValueError('Invalid score thresholds')
         if not 0 < self.rsi_low < self.rsi_high < 100:

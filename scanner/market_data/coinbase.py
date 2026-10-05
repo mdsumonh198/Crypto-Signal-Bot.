@@ -79,7 +79,13 @@ class Coinbase:
         return result
 
 
+class CandleNotReady(ValueError):
+    """Requested completed bucket has not been published yet."""
+
+
 def validate_history(candles, timeframe, end, minimum=250):
+    if not candles or candles[-1].time < end - timeframe:
+        raise CandleNotReady('Latest completed candle missing/stale')
     if len(candles) < minimum:
         raise ValueError(f'Insufficient completed candles: {len(candles)} < {minimum}')
     if candles[-1].time != end - timeframe:
