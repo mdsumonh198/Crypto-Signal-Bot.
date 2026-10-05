@@ -24,7 +24,7 @@ class Liquidity:
     ask: float
     volume_usd: float
     # Optional only for historical replay/test providers. Live Coinbase supplies all.
-    quote_time: float | None = None
+    quote_time: float | None = None  # Coinbase book snapshot time, not last trade time.
     observed_at: float | None = None
     request_started_at: float | None = None
 

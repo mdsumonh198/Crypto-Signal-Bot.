@@ -30,8 +30,8 @@ def evaluate(symbol, candles, regime, liquidity, config, now):
                 timeframe=config.timeframe, score=total, raw_classification=classify(total, config),
                 classification=classification, components=parts, explanations=explanations,
                 indicators=i, btc_regime=regime, risk=risk,
-                quote=dict(source='Coinbase Exchange spot ticker', bid=liquidity.bid, ask=liquidity.ask,
-                           last_trade_time=liquidity.quote_time, observed_at=liquidity.observed_at,
+                quote=dict(source='Coinbase Exchange spot order book (level 1)', bid=liquidity.bid, ask=liquidity.ask,
+                           book_time=liquidity.quote_time, observed_at=liquidity.observed_at,
                            request_started_at=liquidity.request_started_at),
                 invalidation_reasons=reasons,
                 reason='; '.join(reasons) if reasons else 'Bullish trend, rising momentum, volume, candle breakout and market quality confirmed')

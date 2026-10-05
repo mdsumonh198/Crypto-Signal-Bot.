@@ -118,5 +118,5 @@ class UpdateTests(unittest.TestCase):
         telegram = Telegram('fixture', '1')
         with patch.object(telegram, 'send_text') as send:
             telegram.cycle_summary(360000,10,10,0,0)
-        self.assertIn('No valid setup', send.call_args.args[0])
+        self.assertIn('No confirmed BUY opportunity', send.call_args.args[0])
         self.assertNotIn('BUY SIGNAL', send.call_args.args[0])

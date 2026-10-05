@@ -1,7 +1,7 @@
 # Top 10 / Coinbase entry update
 
 Latest audit: see [FINAL_CODE_AUDIT.md](FINAL_CODE_AUDIT.md). The current suite has
-88 passing tests, quote-age guards, visible quote timestamps, entry-first tracking
+93 passing tests, quote-age guards, visible quote timestamps, entry-first tracking
 ordering and paper-mode local configuration. Validation below records the earlier
 Top 10 update snapshot.
 
@@ -31,3 +31,7 @@ A read-only live CMC/Coinbase check selected and evaluated exactly 10 assets in 
 Upload this project's updated source/tests to GitHub. Do not upload private `.env`, databases, logs, test reports or ZIPs. On the VPS preserve `.env` and `data/`, pull the updated source, run tests with the virtual environment, then restart `crypto-scanner` with its existing `--notify` command. Keep `TIMEFRAME=900`; set `TOP_MARKETS=10` in the VPS `.env` so lifecycle wording matches actual selection. No CMC key is required for keyless ranking, but its rate limits can require an optional private key.
 
 The new cycle-status SQLite table is created automatically; no data reset is needed. Existing notified trades retain their stored entry/TP/SL. Only new signals use refreshed ask entry. The running VPS has not been changed by the local update.
+
+Latest BNB correction: ask entry and quote age use timestamped Coinbase level-1
+order-book snapshots, not ticker last-trade time. No public-market API key needed.
+See FINAL_CODE_AUDIT.md.

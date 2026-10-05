@@ -75,15 +75,26 @@ class Coinbase:
         return [rows[t] for t in sorted(rows)]
 
     def liquidity(self, symbol):
+        product = f'/products/{quote(symbol, safe="")}'
+        # Trailing turnover is a liquidity filter, never the executable entry.
+        stats = self.get(product + '/stats')
         started = time.time()
-        row = self.get(f'/products/{quote(symbol, safe="")}/ticker')
+        book = self.get(product + '/book', {'level': 1})
         observed = time.time()
-        # Ticker time is the last trade's timestamp, not a book-update timestamp.
-        # Reject stale activity conservatively instead of asserting a live fill.
-        timestamp = datetime.fromisoformat(row['time'].replace('Z', '+00:00'))
+        if book.get('auction_mode'):
+            raise ValueError('Coinbase book is in auction mode; indicative entry blocked')
+        if not book.get('bids') or not book.get('asks'):
+            raise ValueError('Coinbase order book missing bid or ask; new entry blocked')
+        for level in (book['bids'][0], book['asks'][0]):
+            if len(level) < 2 or not math.isfinite(float(level[1])) or float(level[1]) <= 0:
+                raise ValueError('Coinbase order book has invalid available size')
+        stamp = book.get('time')
+        if not isinstance(stamp, str):
+            raise ValueError('Coinbase order-book timestamp missing')
+        timestamp = datetime.fromisoformat(stamp.replace('Z', '+00:00'))
         if timestamp.tzinfo is None:
-            raise ValueError('Coinbase ticker timestamp lacks timezone')
-        result = Liquidity(float(row['bid']), float(row['ask']), float(row['volume']) * float(row['price']),
+            raise ValueError('Coinbase order-book timestamp lacks timezone')
+        result = Liquidity(float(book['bids'][0][0]), float(book['asks'][0][0]), float(stats['volume']) * float(stats['last']),
                            timestamp.timestamp(), observed, started)
         result.spread_bps
         return result

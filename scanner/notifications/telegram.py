@@ -18,7 +18,7 @@ def format_signal(s):
     if quote.get('observed_at') is not None:
         lines += [f"Coinbase spot bid / ask: ${quote['bid']:.8g} / ${quote['ask']:.8g}",
                   'Quote observed at: ' + datetime.fromtimestamp(quote['observed_at'], timezone.utc).isoformat(),
-                  'Last trade at: ' + datetime.fromtimestamp(quote['last_trade_time'], timezone.utc).isoformat()]
+                  'Price snapshot at: ' + datetime.fromtimestamp(quote.get('book_time', quote.get('last_trade_time')), timezone.utc).isoformat()]
     lines += [f'{k}: {v:.2f}/{MAXIMA[k]}' for k, v in s['components'].items()]
     lines += ['Score measures indicator alignment, not win probability.']
     lines += ['', f"RSI: {i['rsi']:.2f}", f"EMA50: {i['ema50']:.8g}", f"EMA200: {i['ema200']:.8g}",
@@ -39,13 +39,21 @@ class Telegram:
         return self.send_text(format_signal(s))
 
     def cycle_summary(self, candle_close, selected, evaluated, buys, errors, reason=''):
-        label = '📊 15M SCAN UPDATE' if not reason else '⚠️ 15M SCAN UPDATE'
-        state = f'Confirmed BUY setups: {buys}' if buys else 'No valid setup — no new BUY signal.'
-        lines = [label, 'Candle close: ' + datetime.fromtimestamp(candle_close, timezone.utc).isoformat(),
-                 'Universe: CMC-ranked Top 10 Coinbase USD assets',
-                 f'Selected: {selected} | Evaluated: {evaluated} | Data errors: {errors}', state]
-        if reason:
-            lines.append('Status: ' + reason)
+        review = datetime.fromtimestamp(candle_close, timezone.utc)
+        upcoming = datetime.fromtimestamp(candle_close + 900, timezone.utc)
+        lines = ['📊 MARKET UPDATE', 'Review: ' + review.strftime('%d %b, %H:%M UTC'), '',
+                 'Monitoring the Top 10 eligible Coinbase coins.']
+        if not evaluated:
+            lines += ['', 'Market data could not be verified this round.',
+                      'No new BUY recommendation is available.']
+        elif buys:
+            lines += ['', f'✅ {buys} BUY setup(s) passed our confirmation checks.']
+        else:
+            lines += ['', '⏳ No confirmed BUY opportunity among the coins reviewed.',
+                      'Waiting for a setup that meets our entry requirements.']
+        if evaluated and (errors or reason or evaluated < selected):
+            lines += ['', 'Some coins were skipped because up-to-date market data could not be verified.']
+        lines += ['', 'Next scheduled review: ' + upcoming.strftime('%H:%M UTC')]
         return self.send_text('\n'.join(lines))
 
     def trade_update(self, trade, stats):

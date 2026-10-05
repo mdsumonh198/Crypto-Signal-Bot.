@@ -164,7 +164,7 @@ class Scanner:
                     raise ValueError('Fresh quote crossed the candle boundary')
                 evaluated_at = int(time.time()) if live_clock else now
                 liquidity.validate_freshness(evaluated_at, c.max_quote_age)
-                log.info('Coinbase spot quote %s: bid=%.10g ask=%.10g observed=%s last_trade=%s',
+                log.info('Coinbase spot quote %s: bid=%.10g ask=%.10g observed=%s book_time=%s',
                          symbol, liquidity.bid, liquidity.ask, liquidity.observed_at, liquidity.quote_time)
                 signal = evaluate(symbol, candles, regime, liquidity, c, evaluated_at)
                 liquidity.validate_freshness(time.time() if live_clock else now, c.max_quote_age)

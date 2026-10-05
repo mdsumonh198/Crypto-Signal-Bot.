@@ -14,18 +14,18 @@ from tests.test_integration import FixtureProvider, FixtureRanking
 
 
 class PriceAuditTests(unittest.TestCase):
-    def test_coinbase_captures_real_ticker_time_and_request_window(self):
-        row = dict(bid='99.99', ask='100.01', volume='20000', price='100',
+    def test_coinbase_captures_book_time_and_request_window(self):
+        row = dict(bids=[['99.99', '1', 1]], asks=[['100.01', '1', 1]],
                    time='1970-01-01T00:16:39Z')
-        with patch.object(Coinbase, 'get', return_value=row), patch('scanner.market_data.coinbase.time.time', side_effect=[998, 1000]):
+        with patch.object(Coinbase, 'get', side_effect=[dict(volume='20000',last='100'),row]), patch('scanner.market_data.coinbase.time.time', side_effect=[998, 1000]):
             quote = Coinbase().liquidity('ETH-USD')
         self.assertEqual((quote.quote_time, quote.observed_at, quote.request_started_at), (999, 1000, 998))
         quote.validate_freshness(1001, 15)
 
-    def test_missing_or_naive_ticker_time_is_rejected(self):
-        row = dict(bid='99', ask='100', volume='20000', price='100')
+    def test_missing_or_naive_book_time_is_rejected(self):
+        row = dict(bids=[['99','1',1]], asks=[['100','1',1]])
         for stamp in (None, '2026-10-05T12:00:00'):
-            with self.subTest(stamp=stamp), patch.object(Coinbase, 'get', return_value=dict(row, time=stamp)):
+            with self.subTest(stamp=stamp), patch.object(Coinbase, 'get', side_effect=[dict(volume='20000',last='100'),dict(row, time=stamp)]):
                 with self.assertRaises((ValueError, AttributeError)):
                     Coinbase().liquidity('ETH-USD')
 

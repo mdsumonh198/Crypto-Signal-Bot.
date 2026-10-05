@@ -10,15 +10,15 @@ existing stored trades have not been reset or loosened. No live orders are suppo
 
 ## Fixes from this audit
 
-1. **Quote age was unchecked.** Coinbase ticker requests now capture last-trade time,
+1. **Quote age was unchecked.** Coinbase level-1 order-book requests now capture book snapshot time,
    request start and response observation time. MAX_QUOTE_AGE defaults to 15 seconds.
-   Stale last-trade snapshots, slow requests, invalid/missing timestamps and future or
+   Stale book snapshots, slow requests, invalid/missing timestamps and future or
    inconsistent clocks block new entries. Checks run before evaluation, after
    evaluation and immediately before Telegram delivery. A blocked delivery is marked
    explicitly; it cannot create a notified tracking entry.
 2. **Price differences were difficult to diagnose.** Signal payloads and logs retain
    Coinbase spot bid/ask and timestamps. BUY/WATCH messages add bid/ask, quote-observed
-   time and last-trade time. Entry remains the observed ask; the completed candle
+   time and book snapshot time. Entry remains the observed ask; the completed candle
    close is separate. An observed quote is not a guaranteed execution price.
 3. **Tracking catch-up delayed fresh scans.** New-entry analysis now runs before old
    notified-trade catch-up. Tracking still runs afterward, even on scan failure or
@@ -59,7 +59,7 @@ status reservation, reporting confirmed setups or no valid setup/data unavailabi
 
 ## Validation
 
-**88 automated tests passed.** New regressions cover ticker timestamp parsing, stale
+**93 automated tests passed.** New regressions cover book timestamp parsing, stale
 and delayed quotes, missing/future timestamps, expired quotes during evaluation and
 before delivery, no stale paper entry or Telegram BUY, entry-first tracking ordering,
 price/timestamp formatting, invalid risk inputs and accurate lifecycle wording.
@@ -76,10 +76,9 @@ no notifier and no paper positions, so it sent no messages or orders.
 
 ## Practical limits
 
-- Coinbase ticker `time` is **last trade time**, not an order-book update timestamp.
-  The guard is deliberately conservative: an old last trade can block a new entry
-  even when a currently quoted bid/ask is available. A dedicated timestamped book/
-  WebSocket feed would be a separate integration, not something this code claims.
+- Entry now uses the timestamped level-1 Coinbase order book. Ticker last-trade
+  age no longer determines quote freshness. Empty/crossed/invalid books and auction
+  indicative quotes are rejected. An API snapshot still cannot guarantee a fill.
 - The feed is fresh REST snapshots during evaluation, not continuous streaming.
   Network/API delays and Telegram delivery can still create differences between
   the observed ask and a later client fill. CMC supplies ranking, not entry prices.
@@ -115,3 +114,22 @@ TOP_MARKETS=10, TIMEFRAME=900, PAPER=true and MAX_QUOTE_AGE=15. Run
 service with its --notify argument. Inspect logs for Top 10 selection, Coinbase spot
 quote timestamps and scan summaries. A VPS reboot is not required. The VPS has not
 been modified or verified by this local update.
+
+## BNB order-book correction
+
+The earlier live 8/10 result above predates this correction. Entry now comes from
+`GET /products/{symbol}/book?level=1`, whose `time` is the price snapshot timestamp.
+`GET /products/{symbol}/stats` supplies trailing volume times last price solely
+for the existing turnover filter; it never supplies entry. There is no ticker
+fallback when the book fails. MAX_QUOTE_AGE=15, spread, drift, all strategy gates
+and existing tracking remain in force. The five added regression tests prove fresh
+book acceptance despite old last price, stale/slow book rejection, invalid/auction
+book rejection and no ticker fallback. No Coinbase API key is needed for these
+public GET endpoints. CMC key remains optional for ranking.
+
+Reference: [Coinbase product book](https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-book).
+
+Live validation after correction: selected=10, evaluated=10, zero data errors,
+27.5 seconds. BNB was evaluated successfully; its entry reference exactly equalled
+the book ask ($786.19). All ten entry references matched their own book ask.
+No notifier, paper trading or persistent database was used in this check.
