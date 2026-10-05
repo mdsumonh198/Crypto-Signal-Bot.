@@ -7,6 +7,7 @@ from scanner.strategy.btc_regime import detect
 from scanner.strategy.signal_engine import evaluate
 from scanner.paper_trading.engine import PaperEngine
 from scanner.tracking import SignalTracker
+from scanner.market_data.selection import select_markets
 
 log = logging.getLogger(__name__)
 
@@ -42,28 +43,15 @@ class Scanner:
         validate_history(btc, c.timeframe, end)
         regime = detect(indicators(btc), c)
         if c.top_markets:
-            log.info('Ranking markets by liquidity to select top %d', c.top_markets)
-            if hasattr(self.provider, 'turnovers'):
-                turnovers = self.provider.turnovers()
-            else:
-                turnovers = {}
-                for index, symbol in enumerate(available, 1):
-                    try:
-                        turnovers[symbol] = self.provider.liquidity(symbol).volume_usd
-                    except Exception as exc:
-                        self.repo.error(now, symbol, str(exc))
-                    if index % 10 == 0 or index == len(available):
-                        log.info('Liquidity discovery progress: %d/%d markets', index, len(available))
-            excluded = {s.strip() for s in c.excluded_pairs.split(',') if s.strip()}
-            requested = sorted((s for s in available if s in turnovers and s not in excluded and turnovers[s] >= c.min_volume_usd),
-                               key=lambda s: (-turnovers[s], s))[:c.top_markets]
-            log.info('Ranked %d active markets with valid volume data; selected %d/%d',
-                     sum(s in turnovers for s in available), len(requested), c.top_markets)
-            if len(requested) < c.top_markets:
-                log.warning('Only %d rankable active USD markets available for requested %d', len(requested), c.top_markets)
+            limit = min(20, c.top_markets) if c.timeframe == 900 else c.top_markets
+            if limit != c.top_markets:
+                log.warning('15-minute strategy caps full analysis at 20; TOP_MARKETS=%d cannot expand it', c.top_markets)
+            requested = select_markets(self.provider, available, c, end, limit)
         if not requested:
             raise ValueError('No eligible markets selected')
         requested = list(dict.fromkeys(requested))
+        if c.timeframe == 900:
+            requested = requested[:20]
         log.info('Selected %d markets: %s | BTC regime=%s', len(requested), ', '.join(requested), regime)
         selected = set(requested)
         if self.paper:
@@ -93,7 +81,10 @@ class Scanner:
         for index, future in enumerate(as_completed(futures), 1):
             symbol = futures[future]
             try:
-                log.info('Analysis progress %d/%d: %s', index, len(futures), symbol)
+                if symbol in selected:
+                    log.info('Analysis market %s (universe capped at %d)', symbol, len(selected))
+                else:
+                    log.info('Paper-position exit monitoring only: %s', symbol)
                 candles, liquidity = future.result()
                 if live_clock and int(time.time()) // c.timeframe * c.timeframe > end:
                     # A long market discovery cycle must not deliver old signals.

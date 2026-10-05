@@ -17,20 +17,18 @@ class LargeProvider(FixtureProvider):
 
     def liquidity(self, symbol):
         # Below the BUY quality floor: still selected, never promoted to BUY.
-        return Liquidity(99.99, 100.01, 0)
+        return Liquidity(99.99, 100.01, 2e6)
 
 
 class UniverseTests(unittest.TestCase):
-    def test_top_250_ranked_active_pairs_keep_quality_filters(self):
+    def test_old_top_250_setting_cannot_expand_fifteen_minute_universe(self):
         repo = Repository(':memory:')
         try:
             provider = LargeProvider()
             with self.assertLogs('scanner.service', level='INFO'):
                 signals = Scanner(Config(top_markets=250, min_volume_usd=1), provider, repo).run_once(400 * 900)
-            self.assertEqual(len(signals), 250)
-            expected = set(provider.products()[10:])
-            self.assertEqual({s['symbol'] for s in signals}, expected)
-            self.assertTrue(all(s['classification'] == 'NO TRADE' for s in signals))
+            self.assertEqual(len(signals), 20)
+            self.assertTrue(all(s['classification'] != 'BUY' for s in signals))
         finally:
             repo.close()
 

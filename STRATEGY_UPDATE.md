@@ -1,6 +1,6 @@
 # Top-20 / 15-minute research profile — 2026-10-05
 
-The default scan universe is now the 20 active Coinbase USD pairs with greatest observed estimated 24-hour turnover, subject to the volume floor and configurable excluded pairs. This is exchange activity ranking, not global market-cap ranking. BTC/ETH/SOL/ZEC/XRP/NEAR/DOGE/HYPE are examples, not a hardcoded guarantee: a symbol must actually be active on Coinbase and rank into the chosen universe. BTC remains the market safety reference even when outside the selected list. To scan ten markets use `TOP_MARKETS=10`; to specify an exact watchlist use `TOP_MARKETS=0` and `PAIRS=...`.
+The default universe is dynamically selected from active Coinbase USD markets using turnover, spread quality and recent three-candle price activity. The highest-turnover 40 candidates plus qualifying majors receive lightweight screening; only the final 20 receive full signal analysis. Stablecoins and poor-quality markets are excluded. Majors receive a small preference, not automatic admission. The 15-minute strategy caps full analysis at 20 even with old TOP_MARKETS=64/250 settings. See README for ranking weights. Strong confirmation, high-score rejection gates and Telegram behavior remain unchanged in this market-selection update.
 
 A score of 94.6/100 expresses indicator alignment, not win odds. Price can reverse despite passing all filters. The stronger profile keeps 15-minute completed candles and 60-second checks, and defaults to:
 
@@ -53,3 +53,7 @@ sudo journalctl -u crypto-scanner -n 30 --no-pager
 A safe live scan with the new profile evaluated all 20 selected markets in 25.1 seconds with no data errors: BUY=0, WATCH=1, NO TRADE=19. No real Telegram messages or paper trades were produced by this validation. This is one operational snapshot, not evidence of improved strategy performance.
 
 SELL semantics require clarification: exiting an existing long and proposing a new short are different strategies. This update does not issue an ambiguous SELL or place an order. TP/SL outcome replies remain implemented.
+
+Latest market-selection validation: 54 automated tests passed, including full-engine call counts capped at 20 with the old 64-market setting, the old 250-market configuration, changing momentum rankings, stablecoin/spread exclusions, and lightweight three-candle screening.
+
+Live market-selection check: selected=20 and evaluated=20 in 51.7 seconds using public Coinbase data, an in-memory database, no notifier and paper trading disabled for validation. No Telegram messages or trades were sent.
